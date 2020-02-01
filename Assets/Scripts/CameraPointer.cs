@@ -1,19 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CameraPointer : MonoBehaviour
 {
     Vector2 startSelectionDrag;
     GameManager manager;
     Camera mainCamera;
+
     StatePointer state;
+
     bool select = false;
     enum StatePointer
     {
-        PICK,
+        PICK = 0,
         CONSTRUCT
     }
+
+    public LayerMask mask;
+
+    BuildController toBuild;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +63,19 @@ public class CameraPointer : MonoBehaviour
         {
             SelectCharacter(!Input.GetKey(KeyCode.LeftShift));
         }
+        if (Input.GetMouseButtonUp(1))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject.layer == 0)
+            {
+                Debug.DrawLine(hit.point, hit.point + hit.normal * 10, Color.red, 10);
+                foreach (CharacterController character in manager.Selected)
+                {
+                    character.GoTo(hit.point);
+                }
+            }
+        }
     }
 
     void SelectCharacter(bool resetSelect = true)
@@ -75,14 +96,32 @@ public class CameraPointer : MonoBehaviour
     void Construct()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Default","Building")))
         {
-            if (hit.collider.gameObject.layer == 0 && Vector3.Angle(hit.normal, Vector3.up) < 10)
+            if (Vector3.Angle(hit.normal, Vector3.up) < 10)
             {
-                // CONSTRUCT
-                Debug.DrawLine(hit.point, hit.point + hit.normal * 10, Color.red, 10);
+                toBuild.transform.position = hit.point;
             }
 
         }
+
+
+        if (Input.GetMouseButtonUp(0) && toBuild.colliders.Count==0)
+        {
+            toBuild.Construct();
+            state = StatePointer.PICK;
+            toBuild = null;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            Destroy(toBuild.gameObject);
+            state = StatePointer.PICK;
+        }
+    }
+
+    public void PlaceBuilding(BuildController build)
+    {
+        state = StatePointer.CONSTRUCT;
+        toBuild = Instantiate(build,Vector3.zero,Quaternion.identity);
     }
 }
