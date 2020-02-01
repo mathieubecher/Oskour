@@ -103,9 +103,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1356915000533517583}
+  - component: {fileID: 2516787686027988124}
   - component: {fileID: 1356915000533517569}
   - component: {fileID: 1356915000533517571}
-  - component: {fileID: 2516787686027988124}
   - component: {fileID: 2723926883019042299}
   - component: {fileID: 506958740843323688}
   m_Layer: 9
@@ -130,6 +130,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2516787686027988124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356915000533517572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23b42fbe541b4458edfbf82b8fe1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  food: 1
+  oxygen: 1
+  energy: 1
+  selected: {fileID: 2100000, guid: 94b5ba7138f725a48b5e9c452807d934, type: 2}
+  unselect: {fileID: 2100000, guid: 1b8739cc275d2004aa937c2fdad2ffba, type: 2}
 --- !u!23 &1356915000533517569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -185,20 +203,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2516787686027988124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356915000533517572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a23b42fbe541b4458edfbf82b8fe1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selected: {fileID: 2100000, guid: 94b5ba7138f725a48b5e9c452807d934, type: 2}
-  unselect: {fileID: 2100000, guid: 1b8739cc275d2004aa937c2fdad2ffba, type: 2}
 --- !u!195 &2723926883019042299
 NavMeshAgent:
   m_ObjectHideFlags: 0

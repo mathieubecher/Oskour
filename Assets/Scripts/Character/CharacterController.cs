@@ -6,14 +6,28 @@ using UnityEngine.AI;
 public class CharacterController : MonoBehaviour
 {
     bool select;
-    [SerializeField]
-    Material selected;
-    [SerializeField]
-    Material unselect;
+
 
     GameManager manager;
     NavMeshAgent IA;
     public bool Select { get => select; set => select = value; }
+
+    [Header("Information")]
+    public string name;
+
+    [Header("Statistique")]
+    [Range(0,1)]
+    public float food = 1;
+    [Range(0, 1)]
+    public float oxygen = 1;
+    [Range(0, 1)]
+    public float energy = 1;
+
+    [Header("Material")]
+    [SerializeField]
+    Material selected;
+    [SerializeField]
+    Material unselect;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +45,10 @@ public class CharacterController : MonoBehaviour
         
         if (select) transform.GetChild(0).GetComponent<Renderer>().material = selected;
         else transform.GetChild(0).GetComponent<Renderer>().material = unselect;
+
+        food = Mathf.Max(0,food - manager.foodRegress / manager.timeScale * Time.deltaTime);
+        oxygen = Mathf.Max(0, oxygen - manager.oxygenRegress / manager.timeScale * Time.deltaTime);
+        energy = Mathf.Max(0, energy - manager.energyRegress / manager.timeScale * Time.deltaTime);
     }
 
     public void GoTo(Vector3 point)

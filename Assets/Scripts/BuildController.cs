@@ -16,7 +16,11 @@ public class BuildController : MonoBehaviour
     
     Renderer renderer;
     State state;
-    public List<Collider> colliders;
+    List<Collider> colliders;
+
+    public int tier = 0;
+    public string name;
+    public string description;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +50,12 @@ public class BuildController : MonoBehaviour
     public void Construct()
     {
         transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
+        GetComponent<Collider>().isTrigger = false;
         state = State.CONSTRUCT;
+        gameObject.layer = 10;
+    }
+    public virtual string ConditionToString()
+    {
+        return "1 poisson";
     }
 }

@@ -96,7 +96,7 @@ public class CameraPointer : MonoBehaviour
     void Construct()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Default","Building")))
+        if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Default")))
         {
             if (Vector3.Angle(hit.normal, Vector3.up) < 10)
             {
@@ -121,6 +121,10 @@ public class CameraPointer : MonoBehaviour
 
     public void PlaceBuilding(BuildController build)
     {
+        if (state == StatePointer.CONSTRUCT)
+        {
+            Destroy(toBuild.gameObject);
+        }
         state = StatePointer.CONSTRUCT;
         toBuild = Instantiate(build,Vector3.zero,Quaternion.identity);
     }
