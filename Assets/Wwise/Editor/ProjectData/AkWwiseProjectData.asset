@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 1af4f80e3979654588e0ffd2108e267f
     GuidInternal: 
-    m_lastTime: -8586210595769649117
+    m_lastTime: -8586210574425672826
     List:
     - name: OskourWwise
       guid: 82c0d7b5d6b3b74b8011aa6ae800c1bb
@@ -89,6 +89,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8586210597969890503
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /WwiseOskour
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
