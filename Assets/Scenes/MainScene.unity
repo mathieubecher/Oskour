@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.8
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.26666668
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -150,15 +150,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d897b13c9772234bbdc2b53e73b9b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 2100527095}
-  - {fileID: 898579017}
-  - {fileID: 130004576}
-  - {fileID: 2067672596}
-  - {fileID: 778171050}
+  characters: []
   characterSpeed: 30
-  build:
-  - {fileID: 7685465923066107414, guid: 041143ebcca876343a50a2bd4efb9de3, type: 3}
+  foodRegress: 0.4
+  oxygenRegress: 0.2
+  energyRegress: 0.2
+  build: []
+  resources: 0
+  destroy: 0.3
+  construct: 0.3
+  timeScale: 10
 --- !u!4 &29852388
 Transform:
   m_ObjectHideFlags: 0
@@ -173,18 +174,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &130004576 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 695274236}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a23b42fbe541b4458edfbf82b8fe1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &317368277
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +474,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
+        type: 3}
+      propertyPath: name
+      value: Nicolas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50917de70eba762439127c11702a8e3d, type: 3}
 --- !u!1 &622597113
@@ -583,6 +577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
+        type: 3}
+      propertyPath: name
+      value: "Am\xE9lie"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50917de70eba762439127c11702a8e3d, type: 3}
@@ -852,20 +851,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
+        type: 3}
+      propertyPath: name
+      value: Guilhem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50917de70eba762439127c11702a8e3d, type: 3}
---- !u!114 &778171050 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 768966404}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a23b42fbe541b4458edfbf82b8fe1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &790367205
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,18 +934,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &898579017 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1469471883}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a23b42fbe541b4458edfbf82b8fe1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1329343466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1059,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
+        type: 3}
+      propertyPath: name
+      value: Georgette
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50917de70eba762439127c11702a8e3d, type: 3}
 --- !u!1001 &1469471883
@@ -1148,29 +1133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
+        type: 3}
+      propertyPath: name
+      value: Francis
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50917de70eba762439127c11702a8e3d, type: 3}
---- !u!114 &2067672596 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1418884439}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a23b42fbe541b4458edfbf82b8fe1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2100527095 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2516787686027988124, guid: 50917de70eba762439127c11702a8e3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 603420874}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a23b42fbe541b4458edfbf82b8fe1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

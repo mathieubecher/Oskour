@@ -67,12 +67,22 @@ public class CameraPointer : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject.layer == 0)
+            if (Physics.Raycast(ray, out RaycastHit hit))
+                
             {
-                Debug.DrawLine(hit.point, hit.point + hit.normal * 10, Color.red, 10);
-                foreach (CharacterController character in manager.Selected)
+                if (hit.collider.gameObject.layer == 0) { 
+                    Debug.DrawLine(hit.point, hit.point + hit.normal * 10, Color.red, 10);
+                    foreach (CharacterController character in manager.Selected)
+                    {
+                        character.GoTo(hit.point);
+                    }
+                }
+                else if(hit.collider.gameObject.layer == 10)
                 {
-                    character.GoTo(hit.point);
+                    foreach (CharacterController character in manager.Selected)
+                    {
+                        character.GoToInteract(hit.collider.gameObject.GetComponent<BuildController>());
+                    }
                 }
             }
         }

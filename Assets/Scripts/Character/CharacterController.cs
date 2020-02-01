@@ -7,9 +7,16 @@ public class CharacterController : MonoBehaviour
 {
     bool select;
 
-
+    public enum Interact
+    {
+        INTERACT, CONSTRUCT, DESTRUCT
+    }
     GameManager manager;
-    NavMeshAgent IA;
+    [HideInInspector]
+    public NavMeshAgent IA;
+    [HideInInspector]
+    public State state;
+
     public bool Select { get => select; set => select = value; }
 
     [Header("Information")]
@@ -34,7 +41,7 @@ public class CharacterController : MonoBehaviour
     {
         manager = (GameManager)FindObjectOfType<GameManager>();
         IA = GetComponent<NavMeshAgent>();
-
+        state = new IddleState(this);
         
     }
 
@@ -54,5 +61,9 @@ public class CharacterController : MonoBehaviour
     public void GoTo(Vector3 point)
     {
         IA.destination = point;
+    }
+    public void GoToInteract(BuildController build)
+    {
+
     }
 }
