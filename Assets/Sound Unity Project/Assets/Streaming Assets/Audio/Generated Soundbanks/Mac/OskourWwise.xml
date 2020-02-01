@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Propriétaire\Desktop\GGJ-Oskour\Oskour\Assets\Sound Unity Project\Assets\Streaming Assets\Audio\Generated Soundbanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="681580519" GUID="{B5D7C082-B3D6-4BB7-8011-AA6AE800C1BB}" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\OskourWwise</ObjectPath>
+			<ShortName>OskourWwise</ShortName>
+			<Path>OskourWwise.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" GUID="{DDEE01D5-35A1-460C-8A79-53E1C5656606}" DurationType="OneShot" DurationMin="13.058719" DurationMax="13.058719"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="510792075" Language="SFX">
+					<ShortName>Phrase 2.wav</ShortName>
+					<Path>SFX\Phrase 2_CCC510E4.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

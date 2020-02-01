@@ -1,0 +1,55 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "11",
+  "SoundbankVersion": "134",
+  "RootPaths": {
+   "ProjectRoot": "C:\\Users\\Propriétaire\\Desktop\\GGJ-Oskour\\WwiseOskour\\",
+   "SourceFilesRoot": "C:\\Users\\Propriétaire\\Desktop\\GGJ-Oskour\\WwiseOskour\\.cache\\Windows\\",
+   "SoundBanksRoot": "C:\\Users\\Propriétaire\\Desktop\\GGJ-Oskour\\Oskour\\Assets\\Sound Unity Project\\Assets\\Streaming Assets\\Audio\\Generated Soundbanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "C:\\Users\\Propriétaire\\Desktop\\GGJ-Oskour\\WwiseOskour\\GeneratedSoundBanks\\Windows"
+  },
+  "DialogueEvents": [],
+  "StreamedFiles": [],
+  "MediaFilesNotInAnyBank": [],
+  "SoundBanks": [
+   {
+    "Id": "681580519",
+    "GUID": "{B5D7C082-B3D6-4BB7-8011-AA6AE800C1BB}",
+    "Language": "SFX",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\OskourWwise",
+    "ShortName": "OskourWwise",
+    "Path": "OskourWwise.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "3157003241",
+      "Name": "Test",
+      "ObjectPath": "\\Events\\Default Work Unit\\Test",
+      "GUID": "{DDEE01D5-35A1-460C-8A79-53E1C5656606}",
+      "DurationType": "OneShot",
+      "DurationMin": "13.058719",
+      "DurationMax": "13.058719"
+     }
+    ],
+    "IncludedMemoryFiles": [
+     {
+      "Id": "510792075",
+      "Language": "SFX",
+      "ShortName": "Phrase 2.wav",
+      "Path": "SFX\\Phrase 2_CCC510E4.wem"
+     }
+    ]
+   },
+   {
+    "Id": "1355168291",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk"
+   }
+  ]
+ }
+}
