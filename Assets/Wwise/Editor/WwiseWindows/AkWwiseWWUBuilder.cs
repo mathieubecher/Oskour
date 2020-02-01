@@ -57,7 +57,7 @@ public class AkWwiseWWUBuilder
 
 			if (string.IsNullOrEmpty(WwiseSetupWizard.Settings.WwiseProjectPath))
 			{
-				UnityEngine.Debug.LogError("WwiseUnity: Wwise project needed to populate from Work Units. Aborting.");
+				//UnityEngine.Debug.LogError("WwiseUnity: Wwise project needed to populate from Work Units. Aborting.");
 				return;
 			}
 
