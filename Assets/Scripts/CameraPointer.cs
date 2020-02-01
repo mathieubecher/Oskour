@@ -5,52 +5,84 @@ using UnityEngine;
 public class CameraPointer : MonoBehaviour
 {
     Vector2 startSelectionDrag;
-    public Material materialred;
-    public GameObject[] characters;
+    GameManager manager;
+    Camera mainCamera;
+    StatePointer state;
+    bool select = false;
+    enum StatePointer
+    {
+        PICK,
+        CONSTRUCT
+    }
     // Start is called before the first frame update
     void Start()
     {
-        AkSoundEngine.PostEvent("Test",gameObject);
+        manager = (GameManager)FindObjectOfType<GameManager>();
+        mainCamera = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(state == StatePointer.PICK) Pick();
+        else Construct();
+
+    }
+
+    void Pick()
+    {
+        // PICK
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject.layer == 9)
+            {
+                if (!Input.GetKey(KeyCode.LeftShift)) manager.ResetSelect();
+                manager.Select(hit.collider.transform.parent.GetComponent<CharacterController>());
+                select = false;
+            }
+
+            else
+            {
+                startSelectionDrag = Input.mousePosition;
+                select = true;
+            }
             
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if(Vector3.Angle(hit.normal,Vector3.up ) < 10)
-                    Debug.DrawLine(hit.point,hit.point +hit.normal * 10, Color.red, 10);
-                
-            }
-            startSelectionDrag = Input.mousePosition;
 
         }
-        else if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0) && select)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                Debug.DrawLine(hit.point, hit.point + hit.normal * 10, Color.blue, Time.deltaTime);
-            }
+            SelectCharacter(!Input.GetKey(KeyCode.LeftShift));
         }
-        else if(Input.GetMouseButtonUp(0))
+    }
+
+    void SelectCharacter(bool resetSelect = true)
+    {
+        if (resetSelect) manager.ResetSelect();
+
+        Rect selectionBox = new Rect(Mathf.Min(startSelectionDrag.x, Input.mousePosition.x), Mathf.Min(startSelectionDrag.y, Input.mousePosition.y),
+           Mathf.Abs(startSelectionDrag.x - Input.mousePosition.x),
+           Mathf.Abs(startSelectionDrag.y - Input.mousePosition.y));
+        foreach (CharacterController character in manager.Characters)
         {
-            Rect selectionBox = new Rect(Mathf.Min(startSelectionDrag.x, Input.mousePosition.x), Mathf.Min(startSelectionDrag.y, Input.mousePosition.y),
-            Mathf.Abs(startSelectionDrag.x - Input.mousePosition.x),
-            Mathf.Abs(startSelectionDrag.y - Input.mousePosition.y));
-            foreach(GameObject character in characters)
+            if (selectionBox.Contains(mainCamera.WorldToScreenPoint(character.transform.position)))
             {
-                if (selectionBox.Contains(Camera.main.WorldToScreenPoint(character.transform.position)))
-                {
-                    character.transform.GetChild(0).GetComponent<Renderer>().material = materialred;
-                }
+                manager.Select(character);
             }
         }
     }
-   
+    void Construct()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider.gameObject.layer == 0 && Vector3.Angle(hit.normal, Vector3.up) < 10)
+            {
+                // CONSTRUCT
+                Debug.DrawLine(hit.point, hit.point + hit.normal * 10, Color.red, 10);
+            }
+
+        }
+    }
 }
