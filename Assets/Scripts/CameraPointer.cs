@@ -10,7 +10,7 @@ public class CameraPointer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AkSoundEngine.PostEvent("Test",gameObject);
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class CameraPointer : MonoBehaviour
             {
                 if (selectionBox.Contains(Camera.main.WorldToScreenPoint(character.transform.position)))
                 {
-                    character.GetComponent<Renderer>().material = materialred;
+                    character.transform.GetChild(0).GetComponent<Renderer>().material = materialred;
                 }
             }
         }
