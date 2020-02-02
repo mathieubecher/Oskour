@@ -6,7 +6,7 @@ using TMPro;
 
 public class ButonBuild : MonoBehaviour
 {
-    private BuildController bc;
+    public BuildController bc;
     public Text overlay;
     private GameObject go;
     public Button button;
@@ -14,20 +14,18 @@ public class ButonBuild : MonoBehaviour
 
     void Start()
     {
-       /* Button btn = button.GetComponent<Button>();
-        btn.onClick.AddListener(fonctionDeBuildDeMathieux);
-        Text t = this.transform.GetChild(0).GetComponent<Text>();
-            t.text = bc.name;*/
+        
     }
 
     public void AssociateBc()
     {
-        Button btn = button.GetComponent<Button>();
-        btn.onClick.AddListener(fonctionDeBuildDeMathieux);
+        
         Text t = this.transform.GetChild(0).GetComponent<Text>();
         t.text = bc.name;
         t = this.transform.GetChild(1).GetComponent<Text>();
         t.text = bc.name + "\n\n" + bc.description;
+        Button btn = button.GetComponent<Button>();
+        btn.onClick.AddListener(fonctionDeBuildDeMathieux);
     }
 
     public void associateOver()
@@ -38,7 +36,7 @@ public class ButonBuild : MonoBehaviour
         go.GetComponent<RectTransform>().position = new Vector2(margX, 0);*/
         //overlay.gameObject.SetActive(false);
     }
-
+     
     public void SetBuildController(BuildController b)
     {
         if (b == null)
@@ -48,8 +46,9 @@ public class ButonBuild : MonoBehaviour
         this.bc = b;
     }
 
-    void fonctionDeBuildDeMathieux()
+    public void fonctionDeBuildDeMathieux()
     {
+        Debug.Log(bc);
         FindObjectOfType<CameraPointer>().PlaceBuilding(bc);
     }
  

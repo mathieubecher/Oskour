@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 7583514729677856119}
   - component: {fileID: 7583514729677856113}
   - component: {fileID: 7583514729677856118}
+  - component: {fileID: 6074115768477598141}
   m_Layer: 5
   m_Name: ElementCharacUp
   m_TagString: Untagged
@@ -550,6 +551,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6074115768477598141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7583514729677856116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cfc2c9a7c7c73428d4d8f48b77f67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ox: {fileID: 7583514730396029662}
+  st: {fileID: 7583514730695608980}
+  hg: {fileID: 7583514729394222299}
+  bt: {fileID: 7583514729663442467}
+  cc: {fileID: 0}
 --- !u!1 &7583514730245405911
 GameObject:
   m_ObjectHideFlags: 0
