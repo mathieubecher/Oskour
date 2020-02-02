@@ -12,18 +12,26 @@ public class GameManager : MonoBehaviour
     private List<CharacterController> selected;
 
     [Header("Resources Timer")]
-    public float foodRegress = 0.75f;
-    public float oxygenRegress = 0.4f;
-    public float energyRegress = 0.35f;
-    public float timeScale = 20f;
+    public float foodRegress = 0.4f;
+    public float oxygenRegress = 0.2f;
+    public float energyRegress = 0.2f;
+    
 
     [Header("Build Settings")]
     [SerializeField]
     private BuildController[] build;
+    public int resources = 0;
+    public float destroy = 0.3f;
+    public float construct = 0.3f;
+
+    [Space]
+    public float timeScale = 10f;
+
 
     public CharacterController[] Characters { get => characters; set => characters = value; }
     public List<CharacterController> Selected { get => selected; set => selected = value; }
     public BuildController[] Build { get => build; set => build = value; }
+
 
     CameraPointer pointer;
 

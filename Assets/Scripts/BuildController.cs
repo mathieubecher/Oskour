@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BuildController : MonoBehaviour
 {
-    enum State
+    public enum StateBuild
     {
         PLACING, CONSTRUCT, ACTIF
 
@@ -13,14 +13,37 @@ public class BuildController : MonoBehaviour
     [SerializeField] Material placing;
     [SerializeField] Material error;
     [SerializeField] Material basic;
-    
-    Renderer renderer;
-    State state;
-    List<Collider> colliders;
 
-    public int tier = 0;
+    Renderer renderer;
+    StateBuild state;
+
+    [HideInInspector]
+    public List<Collider> colliders;
+
+    [Header("Description")]
     public string name;
     public string description;
+    public int tier = 0;
+
+    [SerializeField, Range(0, 1)]
+    private float constructValue = 0;
+
+    public float ConstructValue { get => constructValue; set{
+        constructValue = value;
+            if (value <= 0)
+            {
+                Destroy(this.gameObject);
+                FindObjectOfType<GameManager>().resources += 1;
+            }
+            else if(value >= 1)
+            {
+                state = StateBuild.ACTIF;
+            }
+    } }
+
+    public StateBuild State { get => state;}
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +55,14 @@ public class BuildController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == State.PLACING)
+        if (state == StateBuild.PLACING)
         {
             if (colliders.Count > 0 && renderer.material != error) renderer.material = error;
             else if ( renderer.material != placing) renderer.material = placing;
         }
-        else if(renderer.material != basic) renderer.material = basic;
+        else if(state == StateBuild.ACTIF && renderer.material != basic) renderer.material = basic;
     }
+
     private void OnTriggerEnter(Collider other)
     {   
         colliders.Add(other);
@@ -51,11 +75,12 @@ public class BuildController : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
         GetComponent<Collider>().isTrigger = false;
-        state = State.CONSTRUCT;
+        state = StateBuild.CONSTRUCT;
         gameObject.layer = 10;
     }
     public virtual string ConditionToString()
     {
         return "1 poisson";
     }
+    
 }
