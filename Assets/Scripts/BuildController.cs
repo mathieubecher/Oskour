@@ -34,7 +34,7 @@ public class BuildController : MonoBehaviour
     public int tier = 0;
     public BuildType type;
     [SerializeField, Range(0, 1)]
-    private float constructValue = 0;
+    protected float constructValue = 0;
 
     [Header("Interactible")]
     public bool interactible = false;
@@ -43,6 +43,7 @@ public class BuildController : MonoBehaviour
     public float bonusTime;
     public List<CharacterController> characters;
     public int maxCharacter = 5;
+    public bool entreposable = false;
 
     [Header("Require")]
     public BuildType[] requires;
@@ -127,6 +128,18 @@ public class BuildController : MonoBehaviour
                     
                 }
                 if (!deletecharacter) ++i;
+            }
+            if(value > 0 && entreposable)
+            {
+                i = 0;
+                List<Entrepot> entrepots = new List<Entrepot>();
+                while (i < manager.listBuild.Count)
+                {
+                    if(manager.listBuild[i].type == BuildType.ENTREPOT)
+                    {
+
+                    }
+                }
             }
         }
     }

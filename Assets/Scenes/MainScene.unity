@@ -438,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 1356915000533517572, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
       propertyPath: m_Name
-      value: Sphere (8)
+      value: Nicolas
       objectReference: {fileID: 0}
     - target: {fileID: 1356915000533517583, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
@@ -589,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 1356915000533517572, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
       propertyPath: m_Name
-      value: Sphere (6)
+      value: Amelie
       objectReference: {fileID: 0}
     - target: {fileID: 1356915000533517583, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
@@ -727,7 +727,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0.74
   m_ColorTemperature: 7385
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 10}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
@@ -862,7 +862,7 @@ PrefabInstance:
     - target: {fileID: 1356915000533517572, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
       propertyPath: m_Name
-      value: Sphere (4)
+      value: Guilhem
       objectReference: {fileID: 0}
     - target: {fileID: 1356915000533517583, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
@@ -991,7 +991,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 22ff8771d87ef27429e670136399094b, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 9c1aca84c1cf9724caa9f5fb12640c09, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -1094,7 +1094,7 @@ PrefabInstance:
     - target: {fileID: 1356915000533517572, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
       propertyPath: m_Name
-      value: Sphere (5)
+      value: Georgette
       objectReference: {fileID: 0}
     - target: {fileID: 1356915000533517583, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
@@ -1168,7 +1168,7 @@ PrefabInstance:
     - target: {fileID: 1356915000533517572, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
       propertyPath: m_Name
-      value: Sphere (7)
+      value: Francis
       objectReference: {fileID: 0}
     - target: {fileID: 1356915000533517583, guid: 50917de70eba762439127c11702a8e3d,
         type: 3}
@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 40
+  m_Intensity: 38
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -1385,8 +1385,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.3743895e+11
-  m_Range: 365.2
+  m_Intensity: 3.435974e+10
+  m_Range: 349.6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
