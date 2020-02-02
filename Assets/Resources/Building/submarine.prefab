@@ -62,7 +62,6 @@ MonoBehaviour:
   maxCharacter: 5
   entreposable: 1
   requires: 
-  alreadyCreate: 0
   constructible: 0
 --- !u!65 &2003171648951480802
 BoxCollider:
