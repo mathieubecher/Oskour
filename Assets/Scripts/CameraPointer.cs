@@ -143,4 +143,10 @@ public class CameraPointer : MonoBehaviour
         state = StatePointer.CONSTRUCT;
         toBuild = Instantiate(build,Vector3.zero,Quaternion.identity);
     }
+
+    /* Fonction a remplir desgtroy building*/
+    public void DestroyBuilding()
+    {
+
+    }
 }
