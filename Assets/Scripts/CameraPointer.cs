@@ -119,6 +119,7 @@ public class CameraPointer : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && toBuild.colliders.Count==0)
         {
             toBuild.Construct();
+            
             state = StatePointer.PICK;
             toBuild = null;
         }

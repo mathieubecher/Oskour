@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     [Header("Build Settings")]
     [SerializeField]
     private BuildController[] build;
+    public BuildController[] listBuild;
+    [Range(0, 100)]
+    public float rangeBuildEffect;
     public int resources = 0;
     public float destroySpeed = 0.3f;
     public float constructSpeed = 0.3f;

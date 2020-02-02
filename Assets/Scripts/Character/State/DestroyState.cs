@@ -32,6 +32,6 @@ public class DestroyState : IddleState
     public override void Interact(BuildController build)
     {
         if (build != this.build) controller.state = new GoToInteract(controller, CharacterController.Interact.INTERACT, build);
-        //else build.Interact(controller);
+        else build.Interact(controller);
     }
 }

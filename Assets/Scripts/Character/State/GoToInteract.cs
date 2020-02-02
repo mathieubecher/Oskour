@@ -19,8 +19,8 @@ public class GoToInteract : GoToState
     public override void Exit()
     {
         if (state == CharacterController.Interact.CONSTRUCT) controller.state = new ConstructState(controller, build);
-        else /* if(state == CharacterController.Interact.DESTRUCT)*/ controller.state = new DestroyState(controller, build);
-        //else build.Interact(controller);
+        else if(state == CharacterController.Interact.DESTRUCT) controller.state = new DestroyState(controller, build);
+        else build.Interact(controller);
     }
     public override void Collide(BuildController build) {
         if (build == this.build)
