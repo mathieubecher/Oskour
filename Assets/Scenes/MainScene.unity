@@ -163,6 +163,15 @@ MonoBehaviour:
   energyRegress: 0.2
   build:
   - {fileID: 2284733697305343802, guid: 0f130e81ab28b1d40ac7cddf53049e34, type: 3}
+  - {fileID: 2284733697305343802, guid: 53cd1b0736673d940b37d063a22a552b, type: 3}
+  - {fileID: 2284733697305343802, guid: e76973d151e3ba241b95e1e06ee0b4c5, type: 3}
+  - {fileID: 5463545887102736698, guid: 6871acea1ea571c48b060d0b8831967f, type: 3}
+  - {fileID: 2284733697305343802, guid: 0ca0cae9a10c1d447bb9976c9a548144, type: 3}
+  - {fileID: 2506843934616851303, guid: 78b87da355bc4b84d9151f28df99d1c2, type: 3}
+  - {fileID: 2284733697305343802, guid: 0241e1d43b72f654a9fdb94d50975747, type: 3}
+  - {fileID: 3411809755935344441, guid: bffbd7cdd3efc4f46982f82699331622, type: 3}
+  - {fileID: 2284733697305343802, guid: 12c7d2d6d7611804da1c8ef4f5e09890, type: 3}
+  - {fileID: 870241017127944795, guid: 31d35f6b77cfbda40bc2d2f98bcfc9ee, type: 3}
   listBuild: []
   rangeBuildEffect: 0
   resources: 0
@@ -585,6 +594,28 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 603420874}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &660138409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660138408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4258ee90226b2649af6651134d3740c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 1
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &675586551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1359,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6530013667336309485, guid: 58d422e16d4277e46a5b5175d4d48551,
+        type: 3}
+      propertyPath: margY
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6530013667350518065, guid: 58d422e16d4277e46a5b5175d4d48551,
         type: 3}
       propertyPath: m_Name
@@ -1437,6 +1473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530013667457716945, guid: 58d422e16d4277e46a5b5175d4d48551,
+        type: 3}
+      propertyPath: margY
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6530013667521589358, guid: 58d422e16d4277e46a5b5175d4d48551,
         type: 3}

@@ -6,7 +6,7 @@ using TMPro;
 
 public class ButonBuild : MonoBehaviour
 {
-    private BuildController bc;
+    public BuildController bc;
     public Text overlay;
     private GameObject go;
     public Button button;
@@ -36,7 +36,7 @@ public class ButonBuild : MonoBehaviour
         go.GetComponent<RectTransform>().position = new Vector2(margX, 0);*/
         //overlay.gameObject.SetActive(false);
     }
-
+     
     public void SetBuildController(BuildController b)
     {
         if (b == null)
@@ -46,9 +46,9 @@ public class ButonBuild : MonoBehaviour
         this.bc = b;
     }
 
-    void fonctionDeBuildDeMathieux()
+    public void fonctionDeBuildDeMathieux()
     {
-        Debug.Log("but");
+        Debug.Log(bc);
         FindObjectOfType<CameraPointer>().PlaceBuilding(bc);
     }
  

@@ -17,6 +17,8 @@ public class CharacterPanel : MonoBehaviour
     {
         Button btn = bt.GetComponent<Button>();
         btn.onClick.AddListener(fonctionDeBuildDeMathieux);
+        Text t = bt.transform.GetChild(0).GetComponent<Text>();
+        t.text = cc.name;
     }
 
     void fonctionDeBuildDeMathieux()
