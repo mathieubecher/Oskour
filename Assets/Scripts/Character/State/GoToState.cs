@@ -9,14 +9,14 @@ public class GoToState : State
     public GoToState(CharacterController controller, Vector3 target) : base(controller)
     {
         this.target = target;
-        controller.IA.SetDestination(target);
         controller.stateInfo = "GoTo";
         controller.IA.isStopped = false;
+        controller.IA.SetDestination(target);
     }
     public override void Update()
     {
+        controller.IA.isStopped = false;
         float dist = controller.IA.remainingDistance;
-        Debug.Log(dist);
         if (dist < 1 || (controller.transform.position - target).magnitude <= controller.IA.stoppingDistance)
             Exit();
 

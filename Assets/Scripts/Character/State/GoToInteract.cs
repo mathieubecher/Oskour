@@ -11,7 +11,6 @@ public class GoToInteract : GoToState
         controller.stateInfo = "GoToInteract";
         this.state = state;
         this.build = build;
-        controller.IA.isStopped = false;
     }
     public override void Update()
     {
@@ -22,5 +21,11 @@ public class GoToInteract : GoToState
         if (state == CharacterController.Interact.CONSTRUCT) controller.state = new ConstructState(controller, build);
         else /* if(state == CharacterController.Interact.DESTRUCT)*/ controller.state = new DestroyState(controller, build);
         //else build.Interact(controller);
+    }
+    public override void Collide(BuildController build) {
+        if (build == this.build)
+        {
+            Exit();
+        }
     }
 }

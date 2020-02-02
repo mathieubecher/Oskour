@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstructState : State
+public class ConstructState : IddleState
 {
     BuildController build;
     public ConstructState(CharacterController controller, BuildController build) : base(controller)
@@ -13,9 +13,11 @@ public class ConstructState : State
     }
     public override void Update()
     {
+        base.Update();
         if (build != null && build.State == BuildController.StateBuild.CONSTRUCT)
             build.ConstructValue += Time.deltaTime * controller.manager.constructSpeed / controller.manager.timeScale;
         else Iddle();
+        
     }
     public override void Exit()
     {

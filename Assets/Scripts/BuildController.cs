@@ -35,10 +35,11 @@ public class BuildController : MonoBehaviour
                 Destroy(this.gameObject);
                 FindObjectOfType<GameManager>().resources += 1;
             }
-            else if(value >= 1)
+            else if (value >= 1)
             {
                 state = StateBuild.ACTIF;
             }
+            else state = StateBuild.CONSTRUCT;
     } }
 
     public StateBuild State { get => state;}
@@ -55,7 +56,7 @@ public class BuildController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == StateBuild.PLACING)
+        if (state == StateBuild.PLACING || state == StateBuild.CONSTRUCT)
         {
             if (colliders.Count > 0 && renderer.material != error) renderer.material = error;
             else if ( renderer.material != placing) renderer.material = placing;
@@ -64,17 +65,25 @@ public class BuildController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {   
-        colliders.Add(other);
+    {
+       
+        if(state == StateBuild.PLACING)
+            colliders.Add(other);
+        else if(other.gameObject.layer == 9)
+        {
+            
+            other.transform.parent.GetComponent<CharacterController>().state.Collide(this);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        colliders.Remove(other);
+        if (state == StateBuild.PLACING)
+            colliders.Remove(other);
     }
     public void Construct()
     {
         transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
-        GetComponent<Collider>().isTrigger = false;
+        Destroy(GetComponent<Rigidbody>());
         state = StateBuild.CONSTRUCT;
         gameObject.layer = 10;
     }

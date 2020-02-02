@@ -11,7 +11,7 @@ public class IddleState : State
     }
     public override void Update()
     {
-        
+        //controller.GetComponent<Rigidbody>().velocity = Vector3.zero;   
     }
 
 

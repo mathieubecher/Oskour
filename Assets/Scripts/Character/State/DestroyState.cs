@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyState : State
+public class DestroyState : IddleState
 {
     BuildController build;
     public DestroyState(CharacterController controller, BuildController build) : base(controller)
     {
         this.build = build;
         controller.stateInfo = "Destruct";
+        
         controller.IA.isStopped = true;
     }
     public override void Update()
     {
-        if (build != null && build.State == BuildController.StateBuild.CONSTRUCT)
+        if (build != null && (build.State == BuildController.StateBuild.CONSTRUCT || build.State == BuildController.StateBuild.ACTIF))
             build.ConstructValue -= Time.deltaTime * controller.manager.destroySpeed / controller.manager.timeScale;
         else Iddle();
     }
