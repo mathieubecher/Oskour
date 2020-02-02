@@ -12,7 +12,7 @@ public class BuildController : MonoBehaviour
     }
     public enum BuildType
     {
-        FERME, DORTOIRE, ENTREPOT, BRAS, OXYGENATEUR, PHARE, KAFE, PIKOUZ, YELLOW 
+        FERME, DORTOIRE, ENTREPOT, BRAS, OXYGENATEUR, PHARE, KAFE, PIKOUZ, YELLOW, ELECTRICITE
     }
     enum Resources
     {
@@ -143,6 +143,14 @@ public class BuildController : MonoBehaviour
                 if(entrepots.Count > 0)
                 {
                     value = value / entrepots.Count;
+                    foreach (Entrepot entrepot in entrepots)
+                    {
+                        if(resourceType == Resources.FOOD)
+                            entrepot.stockFood += value;
+                        if (resourceType == Resources.ENERGY)
+                            entrepot.stockCoffee += value;
+                    }
+                    foreach (Entrepot entrepot in entrepots) entrepot.stockFood += value;
                 }
                 
             }
