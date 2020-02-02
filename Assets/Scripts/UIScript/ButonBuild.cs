@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ButonBuild : MonoBehaviour
 {
     private BuildController bc;
-    public Overlay overlay;
-    private GameObject over;
+    public Text overlay;
+    private GameObject go;
     public Button button;
+    public float margX = 70;
 
     void Start()
     {
@@ -24,6 +26,17 @@ public class ButonBuild : MonoBehaviour
         btn.onClick.AddListener(fonctionDeBuildDeMathieux);
         Text t = this.transform.GetChild(0).GetComponent<Text>();
         t.text = bc.name;
+        t = this.transform.GetChild(1).GetComponent<Text>();
+        t.text = bc.name + "\n\n" + bc.description;
+    }
+
+    public void associateOver()
+    {
+       
+        /*go = GameObject.Instantiate(overlay.gameObject, button.GetComponent<RectTransform>());
+        go.GetComponent<RectTransform>().anchoredPosition = button.GetComponent<RectTransform>().anchoredPosition;
+        go.GetComponent<RectTransform>().position = new Vector2(margX, 0);*/
+        //overlay.gameObject.SetActive(false);
     }
 
     public void SetBuildController(BuildController b)
@@ -42,10 +55,10 @@ public class ButonBuild : MonoBehaviour
  
     private void OnMouseOver()
     {
-        over.SetActive(true);
+        overlay.gameObject.SetActive(true);
     }
     void OnMouseExit()
     {
-        over.SetActive(false);
+        //overlay.gameObject.SetActive(false);
     }
 }
