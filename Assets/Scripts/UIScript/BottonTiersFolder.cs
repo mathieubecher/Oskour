@@ -6,36 +6,58 @@ using UnityEngine.UI;
 public class BottonTiersFolder : MonoBehaviour
 {
     public Button button;
+    
     public ButonBuild b;
-    private List <GameObject> bb;
+    public float height;
+    public float weight;
+    private List <GameObject> bb = new List<GameObject>();
     public float margY = 10;
     public float margX = 40;
     public int tier;
     private bool active = false;
+    public float taille;
+    public PapaBoutton pb;
 
     void Start()
     {
         BuildController[] bc = ((GameManager)FindObjectOfType<GameManager>()).Build;
-        int l = bc.Length;
-        float height = b.gameObject.transform.lossyScale.y;
-        float weight = b.gameObject.transform.lossyScale.x;
-        float taille = (height + margY) * l - margY;
-        for (int i = 0; i<l;++i)
+        int l = 0;
+        foreach (BuildController c in bc)
+            if (c.tier == tier)
+                l++;
+        /*float*/ taille = ((l - 1) * (height+margY))/2;
+        int i = 0;
+        foreach (BuildController c in bc)
         {
-            if (bc[i].tier == tier)
+            if (c.tier == tier)
             {
-                b.SetBuildController(bc[i]);
-                bb.Add(GameObject.Instantiate(b.gameObject, new Vector3(margX, i * taille + i * margY), Quaternion.identity, this.gameObject.transform));
-                bb[bb.Count - 1].SetActive(false);
+                b.SetBuildController(c);
+                b.AssociateBc();
+                GameObject go = GameObject.Instantiate(b.gameObject);
+                go.SetActive(false);
+                go.GetComponent<RectTransform>().anchoredPosition = button.GetComponent<RectTransform>().anchoredPosition;
+                go.GetComponent<RectTransform>().position = new Vector2(margX, taille - i * height - i * margY);
+                go.GetComponent<RectTransform>().SetParent(button.GetComponent<RectTransform>(), false);
+                bb.Add(go);
+                ++i;
             }
         }
         Button btn = button.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
 
+    public void inactivate()
+    {
+        foreach (GameObject go in bb)
+        {
+            go.SetActive(false);
+        }
+    }
+
     void TaskOnClick()
     {
         active = !active;
+        pb.noticePapa(this);
         foreach (GameObject go in bb)
         {
             go.SetActive(active);
