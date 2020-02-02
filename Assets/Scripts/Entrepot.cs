@@ -6,8 +6,5 @@ public class Entrepot : BuildController
 {
     public float stockFood;
     public float stockCoffee;
-    private void Update()
-    {
-        
-    }
+
 }
