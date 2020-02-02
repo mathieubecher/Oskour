@@ -21,6 +21,137 @@
     "Path": "OskourWwise.bnk",
     "IncludedEvents": [
      {
+      "Id": "2950388601",
+      "Name": "Play_Manque_oxygene",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Manque_oxygene",
+      "GUID": "{0AF9D2CE-3CB6-4B17-8466-D807D9945A8B}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.585748",
+      "DurationMax": "4.970104"
+     },
+     {
+      "Id": "2964790935",
+      "Name": "Play_Respiration_Calme_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Respiration_Calme_01",
+      "GUID": "{BD086957-2FBF-48AD-8233-57BE2C937C4F}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "2964790932",
+      "Name": "Play_Respiration_Calme_02",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Respiration_Calme_02",
+      "GUID": "{6F0B7023-899A-42D7-8DE0-BC2EDDEF5D84}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "3805364962",
+      "Name": "Play_Respiration_Rapide_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Respiration_Rapide_01",
+      "GUID": "{30E05AFD-F23A-46E6-AA81-49AC880A5B82}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "3805364961",
+      "Name": "Play_Respiration_Rapide_02",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Respiration_Rapide_02",
+      "GUID": "{142464E3-D8A1-4C61-AF52-5A0EEA3AE36E}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "1885017876",
+      "Name": "Play_Stamina_Multiple",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Stamina_Multiple",
+      "GUID": "{404C0555-5C33-40F1-992D-AAC9595C2483}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "1480292262",
+      "Name": "Play_Stamina_Simple",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Stamina_Simple",
+      "GUID": "{D5DA0DEA-6005-452F-BA13-503F7C3A1A98}",
+      "DurationType": "Infinite"
+     },
+     {
+      "Id": "4252225699",
+      "Name": "Stop_Manque_oxygene",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Manque_oxygene",
+      "GUID": "{3A5949DB-EAF4-4D7E-9FFC-2F3C8BAC35A6}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1132729357",
+      "Name": "Stop_Respiration_Calme_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Respiration_Calme_01",
+      "GUID": "{A4C213EE-5508-40CC-88C2-99197381AD8F}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1132729358",
+      "Name": "Stop_Respiration_Calme_02",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Respiration_Calme_02",
+      "GUID": "{AF7271EB-240A-4758-8690-1BE42AACB730}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1164357412",
+      "Name": "Stop_Respiration_Rapide_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Respiration_Rapide_01",
+      "GUID": "{B17CE5DA-680E-4A93-BA86-9B00476D4CE0}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1164357415",
+      "Name": "Stop_Respiration_Rapide_02",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Respiration_Rapide_02",
+      "GUID": "{86B6CCA7-577E-4AA1-A2F1-B94946FF1BE5}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "1158293510",
+      "Name": "Stop_Stamina_Multiple",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Stamina_Multiple",
+      "GUID": "{8E97F24D-A572-427F-953C-ACCCED2D6579}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "2542171332",
+      "Name": "Stop_Stamina_Simple",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Stamina_Simple",
+      "GUID": "{19A028E4-4BAF-466C-AA05-C3E6C7BD8584}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
+      "Id": "638727314",
+      "Name": "Stop_Underwater_ambience",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Underwater_ambience",
+      "GUID": "{CD5B9AAB-0A3F-4218-A4F1-C39CD552A06F}",
+      "MaxAttenuation": "0.000000",
+      "DurationType": "OneShot",
+      "DurationMin": "0.000000",
+      "DurationMax": "0.000000"
+     },
+     {
       "Id": "3157003241",
       "Name": "Test",
       "ObjectPath": "\\Events\\Default Work Unit\\Test",
@@ -28,14 +159,237 @@
       "DurationType": "OneShot",
       "DurationMin": "13.058719",
       "DurationMax": "13.058719"
+     },
+     {
+      "Id": "259372889",
+      "Name": "Underwater_ambience",
+      "ObjectPath": "\\Events\\Default Work Unit\\Underwater_ambience",
+      "GUID": "{C6BBA9F5-D79F-4CCB-8787-FFF8C677F6A2}",
+      "DurationType": "Infinite"
      }
     ],
     "IncludedMemoryFiles": [
      {
+      "Id": "20642613",
+      "Language": "SFX",
+      "ShortName": "Three_Low_submarine_cry_silence_before.wav",
+      "Path": "SFX\\Three_Low_submarine_cry_silence_before_1B67ABFF.wem"
+     },
+     {
+      "Id": "21753682",
+      "Language": "SFX",
+      "ShortName": "whales_cry.wav",
+      "Path": "SFX\\whales_cry_6296B0F9.wem"
+     },
+     {
+      "Id": "105992950",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 01 - 02.wav",
+      "Path": "SFX\\Repiration Type 01 - 02_92172E63.wem"
+     },
+     {
+      "Id": "114349610",
+      "Language": "SFX",
+      "ShortName": "whales_cry_5.wav",
+      "Path": "SFX\\whales_cry_5_6296B0F9.wem"
+     },
+     {
+      "Id": "125218694",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 01 - 06.wav",
+      "Path": "SFX\\Repiration Type 01 - 06_5721C50C.wem"
+     },
+     {
+      "Id": "172080907",
+      "Language": "SFX",
+      "ShortName": "Stamina Simple - 02.wav",
+      "Path": "SFX\\Stamina Simple - 02_6296B0F9.wem"
+     },
+     {
+      "Id": "188374417",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 01 - 01.wav",
+      "Path": "SFX\\Repiration Type 01 - 01_4C585420.wem"
+     },
+     {
+      "Id": "223747933",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 01 - 05.wav",
+      "Path": "SFX\\Repiration Type 01 - 05_565E7754.wem"
+     },
+     {
+      "Id": "250153729",
+      "Language": "SFX",
+      "ShortName": "whales_cry_4.wav",
+      "Path": "SFX\\whales_cry_4_6296B0F9.wem"
+     },
+     {
+      "Id": "281097748",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 03 - 04.wav",
+      "Path": "SFX\\Repiration Type 03 - 04_87AF73CC.wem"
+     },
+     {
+      "Id": "282590047",
+      "Language": "SFX",
+      "ShortName": "Stamina Simple - 03.wav",
+      "Path": "SFX\\Stamina Simple - 03_0514DBD8.wem"
+     },
+     {
+      "Id": "330586582",
+      "Language": "SFX",
+      "ShortName": "whales_cry_3.wav",
+      "Path": "SFX\\whales_cry_3_6296B0F9.wem"
+     },
+     {
+      "Id": "376464674",
+      "Language": "SFX",
+      "ShortName": "horror_ambience_2.wav",
+      "Path": "SFX\\horror_ambience_2_6296B0F9.wem"
+     },
+     {
+      "Id": "422324325",
+      "Language": "SFX",
+      "ShortName": "Two_Low_submarine_cry.wav",
+      "Path": "SFX\\Two_Low_submarine_cry_F0747EB8.wem"
+     },
+     {
+      "Id": "455574895",
+      "Language": "SFX",
+      "ShortName": "Three_Low_submarine_cry.wav",
+      "Path": "SFX\\Three_Low_submarine_cry_06AEA145.wem"
+     },
+     {
+      "Id": "474752918",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 03 - 04.wav",
+      "Path": "SFX\\Repiration Type 03 - 04_54FAEC34.wem"
+     },
+     {
       "Id": "510792075",
       "Language": "SFX",
       "ShortName": "Phrase 2.wav",
-      "Path": "SFX\\Phrase 2_CCC510E4.wem"
+      "Path": "SFX\\Phrase 2_C8C53D54.wem"
+     },
+     {
+      "Id": "548206216",
+      "Language": "SFX",
+      "ShortName": "Underwater.wav",
+      "Path": "SFX\\Underwater_9B96ECC7.wem"
+     },
+     {
+      "Id": "582287287",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 03 - 02.wav",
+      "Path": "SFX\\Repiration Type 03 - 02_1B4A76D3.wem"
+     },
+     {
+      "Id": "586098695",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 03 - 03.wav",
+      "Path": "SFX\\Repiration Type 03 - 03_B86DD532.wem"
+     },
+     {
+      "Id": "586405997",
+      "Language": "SFX",
+      "ShortName": "Low_submarine_cry.wav",
+      "Path": "SFX\\Low_submarine_cry_904EF6E0.wem"
+     },
+     {
+      "Id": "600504965",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 01 - 03.wav",
+      "Path": "SFX\\Repiration Type 01 - 03_0AB14148.wem"
+     },
+     {
+      "Id": "608325220",
+      "Language": "SFX",
+      "ShortName": "Stamina Multiple - 03.wav",
+      "Path": "SFX\\Stamina Multiple - 03_968442DB.wem"
+     },
+     {
+      "Id": "656612288",
+      "Language": "SFX",
+      "ShortName": "whales_cry_2.wav",
+      "Path": "SFX\\whales_cry_2_6296B0F9.wem"
+     },
+     {
+      "Id": "712287366",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 02 - 04.wav",
+      "Path": "SFX\\Repiration Type 02 - 04_FA56470C.wem"
+     },
+     {
+      "Id": "714631191",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 03 - 03.wav",
+      "Path": "SFX\\Repiration Type 03 - 03_0709CACE.wem"
+     },
+     {
+      "Id": "765017002",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 02 - 03.wav",
+      "Path": "SFX\\Repiration Type 02 - 03_0B36473B.wem"
+     },
+     {
+      "Id": "790329340",
+      "Language": "SFX",
+      "ShortName": "Stamina Multiple - 01.wav",
+      "Path": "SFX\\Stamina Multiple - 01_3929A441.wem"
+     },
+     {
+      "Id": "815132754",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 02 - 01.wav",
+      "Path": "SFX\\Repiration Type 02 - 01_7F8B1615.wem"
+     },
+     {
+      "Id": "842067846",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 03 - 01.wav",
+      "Path": "SFX\\Repiration Type 03 - 01_6E6BFD28.wem"
+     },
+     {
+      "Id": "860964560",
+      "Language": "SFX",
+      "ShortName": "Stamina Multiple - 02.wav",
+      "Path": "SFX\\Stamina Multiple - 02_3709B267.wem"
+     },
+     {
+      "Id": "898951812",
+      "Language": "SFX",
+      "ShortName": "Stamina Simple - 01.wav",
+      "Path": "SFX\\Stamina Simple - 01_5D03E7C9.wem"
+     },
+     {
+      "Id": "917801709",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 01 - 04.wav",
+      "Path": "SFX\\Repiration Type 01 - 04_360BD06A.wem"
+     },
+     {
+      "Id": "918811913",
+      "Language": "SFX",
+      "ShortName": "horror_ambience_1.wav",
+      "Path": "SFX\\horror_ambience_1_A6C843ED.wem"
+     },
+     {
+      "Id": "939164987",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 04.wav",
+      "Path": "SFX\\Repiration Type 04_6704773E.wem"
+     },
+     {
+      "Id": "1018782638",
+      "Language": "SFX",
+      "ShortName": "Repiration Type 02 - 02.wav",
+      "Path": "SFX\\Repiration Type 02 - 02_A2A15730.wem"
+     },
+     {
+      "Id": "1054380156",
+      "Language": "SFX",
+      "ShortName": "Low_submarine_drone.wav",
+      "Path": "SFX\\Low_submarine_drone_D6A8480A.wem"
      }
     ]
    }
