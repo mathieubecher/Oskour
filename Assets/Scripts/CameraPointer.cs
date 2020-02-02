@@ -43,8 +43,8 @@ public class CameraPointer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject.layer == 9)
+            Debug.Log("pick");
+            if (Physics.Raycast(ray, out RaycastHit hit,LayerMask.GetMask("Character")) )
             {
                 if (!Input.GetKey(KeyCode.LeftShift)) manager.ResetSelect();
                 manager.Select(hit.collider.transform.parent.GetComponent<CharacterController>());

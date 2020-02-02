@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
     public State state;
 
     public bool Select { get => select; set => select = value; }
-
+    
     [Header("Information")]
     public string name;
     public string stateInfo = "Iddle";
@@ -31,6 +31,7 @@ public class CharacterController : MonoBehaviour
     [Range(0, 1)]
     public float energy = 1;
     public float beginTimer = 60;
+    public GameObject plane;
 
     [Header("Material")]
     [SerializeField]
@@ -53,8 +54,8 @@ public class CharacterController : MonoBehaviour
         
         IA.speed = manager.characterSpeed;
         
-        if (select) transform.GetChild(0).GetComponent<Renderer>().material = selected;
-        else transform.GetChild(0).GetComponent<Renderer>().material = unselect;
+        if (select) plane.SetActive(true);
+        else plane.SetActive(false);
 
         state.Update();
 
