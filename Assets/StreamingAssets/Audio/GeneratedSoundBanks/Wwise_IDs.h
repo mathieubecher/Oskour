@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID DRILL = 2168413864U;
         static const AkUniqueID PLAY_MANQUE_OXYGENE = 2950388601U;
         static const AkUniqueID PLAY_RESPIRATION_CALME_01 = 2964790935U;
         static const AkUniqueID PLAY_RESPIRATION_CALME_02 = 2964790932U;

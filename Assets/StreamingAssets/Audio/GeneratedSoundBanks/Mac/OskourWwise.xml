@@ -13,6 +13,7 @@
 			<ShortName>OskourWwise</ShortName>
 			<Path>OskourWwise.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2168413864" Name="Drill" ObjectPath="\Events\Default Work Unit\Drill" GUID="{2D4FFFB4-CCFE-407E-997F-4831B1916375}" DurationType="OneShot" DurationMin="1.517211" DurationMax="2.052472"/>
 				<Event Id="2950388601" Name="Play_Manque_oxygene" ObjectPath="\Events\Default Work Unit\Play_Manque_oxygene" GUID="{0AF9D2CE-3CB6-4B17-8466-D807D9945A8B}" DurationType="OneShot" DurationMin="3.585748" DurationMax="4.970104"/>
 				<Event Id="2964790935" Name="Play_Respiration_Calme_01" ObjectPath="\Events\Default Work Unit\Play_Respiration_Calme_01" GUID="{BD086957-2FBF-48AD-8233-57BE2C937C4F}" DurationType="Infinite"/>
 				<Event Id="2964790932" Name="Play_Respiration_Calme_02" ObjectPath="\Events\Default Work Unit\Play_Respiration_Calme_02" GUID="{6F0B7023-899A-42D7-8DE0-BC2EDDEF5D84}" DurationType="Infinite"/>
@@ -84,6 +85,10 @@
 					<ShortName>horror_ambience_2.wav</ShortName>
 					<Path>SFX\horror_ambience_2_6296B0F9.wem</Path>
 				</File>
+				<File Id="382528668" Language="SFX">
+					<ShortName>Electric Drill 01.wav</ShortName>
+					<Path>SFX\Electric Drill 01_6296B0F9.wem</Path>
+				</File>
 				<File Id="422324325" Language="SFX">
 					<ShortName>Two_Low_submarine_cry.wav</ShortName>
 					<Path>SFX\Two_Low_submarine_cry_F0747EB8.wem</Path>
@@ -124,6 +129,10 @@
 					<ShortName>Stamina Multiple - 03.wav</ShortName>
 					<Path>SFX\Stamina Multiple - 03_968442DB.wem</Path>
 				</File>
+				<File Id="648675162" Language="SFX">
+					<ShortName>Electric Drill 03.wav</ShortName>
+					<Path>SFX\Electric Drill 03_6296B0F9.wem</Path>
+				</File>
 				<File Id="656612288" Language="SFX">
 					<ShortName>whales_cry_2.wav</ShortName>
 					<Path>SFX\whales_cry_2_6296B0F9.wem</Path>
@@ -140,9 +149,17 @@
 					<ShortName>Repiration Type 02 - 03.wav</ShortName>
 					<Path>SFX\Repiration Type 02 - 03_0B36473B.wem</Path>
 				</File>
+				<File Id="779562174" Language="SFX">
+					<ShortName>Electric Drill 02.wav</ShortName>
+					<Path>SFX\Electric Drill 02_6296B0F9.wem</Path>
+				</File>
 				<File Id="790329340" Language="SFX">
 					<ShortName>Stamina Multiple - 01.wav</ShortName>
 					<Path>SFX\Stamina Multiple - 01_3929A441.wem</Path>
+				</File>
+				<File Id="801407178" Language="SFX">
+					<ShortName>Electric Drill 04.wav</ShortName>
+					<Path>SFX\Electric Drill 04_6296B0F9.wem</Path>
 				</File>
 				<File Id="815132754" Language="SFX">
 					<ShortName>Repiration Type 02 - 01.wav</ShortName>

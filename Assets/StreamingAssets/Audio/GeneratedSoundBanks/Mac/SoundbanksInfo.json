@@ -24,6 +24,15 @@
     "Path": "OskourWwise.bnk",
     "IncludedEvents": [
      {
+      "Id": "2168413864",
+      "Name": "Drill",
+      "ObjectPath": "\\Events\\Default Work Unit\\Drill",
+      "GUID": "{2D4FFFB4-CCFE-407E-997F-4831B1916375}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.517211",
+      "DurationMax": "2.052472"
+     },
+     {
       "Id": "2950388601",
       "Name": "Play_Manque_oxygene",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Manque_oxygene",
@@ -251,6 +260,12 @@
       "Path": "SFX\\horror_ambience_2_6296B0F9.wem"
      },
      {
+      "Id": "382528668",
+      "Language": "SFX",
+      "ShortName": "Electric Drill 01.wav",
+      "Path": "SFX\\Electric Drill 01_6296B0F9.wem"
+     },
+     {
       "Id": "422324325",
       "Language": "SFX",
       "ShortName": "Two_Low_submarine_cry.wav",
@@ -311,6 +326,12 @@
       "Path": "SFX\\Stamina Multiple - 03_968442DB.wem"
      },
      {
+      "Id": "648675162",
+      "Language": "SFX",
+      "ShortName": "Electric Drill 03.wav",
+      "Path": "SFX\\Electric Drill 03_6296B0F9.wem"
+     },
+     {
       "Id": "656612288",
       "Language": "SFX",
       "ShortName": "whales_cry_2.wav",
@@ -335,10 +356,22 @@
       "Path": "SFX\\Repiration Type 02 - 03_0B36473B.wem"
      },
      {
+      "Id": "779562174",
+      "Language": "SFX",
+      "ShortName": "Electric Drill 02.wav",
+      "Path": "SFX\\Electric Drill 02_6296B0F9.wem"
+     },
+     {
       "Id": "790329340",
       "Language": "SFX",
       "ShortName": "Stamina Multiple - 01.wav",
       "Path": "SFX\\Stamina Multiple - 01_3929A441.wem"
+     },
+     {
+      "Id": "801407178",
+      "Language": "SFX",
+      "ShortName": "Electric Drill 04.wav",
+      "Path": "SFX\\Electric Drill 04_6296B0F9.wem"
      },
      {
       "Id": "815132754",
