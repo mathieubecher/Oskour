@@ -49,9 +49,17 @@ public class ButonBuild : MonoBehaviour
     public void fonctionDeBuildDeMathieux()
     {
         Debug.Log(bc);
+        StartCoroutine(waiter());
+        
+    }
+
+    IEnumerator waiter()
+    {
+        
+        yield return new WaitForSecondsRealtime(1);
         FindObjectOfType<CameraPointer>().PlaceBuilding(bc);
     }
- 
+
     private void OnMouseOver()
     {
         overlay.gameObject.SetActive(true);
