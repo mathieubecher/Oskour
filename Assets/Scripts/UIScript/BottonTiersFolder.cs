@@ -52,6 +52,7 @@ public class BottonTiersFolder : MonoBehaviour
         {
             go.SetActive(false);
         }
+        active = false;
     }
 
     void TaskOnClick()

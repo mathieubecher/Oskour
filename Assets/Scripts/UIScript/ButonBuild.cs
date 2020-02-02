@@ -14,20 +14,18 @@ public class ButonBuild : MonoBehaviour
 
     void Start()
     {
-       /* Button btn = button.GetComponent<Button>();
-        btn.onClick.AddListener(fonctionDeBuildDeMathieux);
-        Text t = this.transform.GetChild(0).GetComponent<Text>();
-            t.text = bc.name;*/
+        
     }
 
     public void AssociateBc()
     {
-        Button btn = button.GetComponent<Button>();
-        btn.onClick.AddListener(fonctionDeBuildDeMathieux);
+        
         Text t = this.transform.GetChild(0).GetComponent<Text>();
         t.text = bc.name;
         t = this.transform.GetChild(1).GetComponent<Text>();
         t.text = bc.name + "\n\n" + bc.description;
+        Button btn = button.GetComponent<Button>();
+        btn.onClick.AddListener(fonctionDeBuildDeMathieux);
     }
 
     public void associateOver()
@@ -50,6 +48,7 @@ public class ButonBuild : MonoBehaviour
 
     void fonctionDeBuildDeMathieux()
     {
+        Debug.Log("but");
         FindObjectOfType<CameraPointer>().PlaceBuilding(bc);
     }
  
