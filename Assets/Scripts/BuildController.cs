@@ -25,7 +25,7 @@ public class BuildController : MonoBehaviour
     Renderer renderer;
     StateBuild state;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<Collider> colliders;
 
     [Header("Description")]
@@ -38,12 +38,11 @@ public class BuildController : MonoBehaviour
 
     [Header("Interactible")]
     public bool interactible = false;
-    public List<CharacterController> characters;
-    public int maxCharacter = 0;
     [SerializeField]
     private Resources resourceType;
-    [Range(0, 2)]
     public float bonusTime;
+    public List<CharacterController> characters;
+    public int maxCharacter = 5;
 
     [Header("Require")]
     public BuildType[] requires;
@@ -72,6 +71,7 @@ public class BuildController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        characters = new List<CharacterController>();
         manager =  FindObjectOfType<GameManager>();
         colliders = new List<Collider>();
         renderer = transform.GetChild(0).GetComponent<Renderer>();
@@ -104,35 +104,43 @@ public class BuildController : MonoBehaviour
         if (state == StateBuild.PLACING) Constructible();
         if (state == StateBuild.PLACING || state == StateBuild.CONSTRUCT)
         {
-            if (!constructible && renderer.material != error) renderer.material = error;
-            else if ( renderer.material != placing) renderer.material = placing;
+            //if (!constructible && renderer.material != error) renderer.material = error;
+            //else if ( renderer.material != placing) renderer.material = placing;
         }
-        else if(state == StateBuild.ACTIF && renderer.material != basic) renderer.material = basic;
+        //else if(state == StateBuild.ACTIF && renderer.material != basic) renderer.material = basic;
 
         if(state == StateBuild.ACTIF)
         {
-            float value = bonusTime;
-            foreach(CharacterController character in characters)
+            float value = bonusTime * Time.deltaTime;
+            int i = 0;
+            while (i < characters.Count)
             {
-                value -= bonusTime / (float)maxCharacter;
+                CharacterController character = characters[i];
+                value -= bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime;
+                bool deletecharacter = false;
                 if (value > 0)
                 {
-                    if(resourceType == Resources.FOOD) AddResourcesCharacter(character, character.food, out character.food, bonusTime / (float)maxCharacter); 
-                    else if(resourceType == Resources.ENERGY) AddResourcesCharacter(character, character.energy, out character.energy, bonusTime / (float)maxCharacter);
-                    else AddResourcesCharacter(character, character.oxygen, out character.oxygen, bonusTime / (float)maxCharacter);
+                    
+                    if (resourceType == Resources.FOOD) deletecharacter = AddResourcesCharacter(character, character.food, out character.food, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
+                    else if (resourceType == Resources.ENERGY) deletecharacter = AddResourcesCharacter(character, character.energy, out character.energy, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
+                    else deletecharacter = AddResourcesCharacter(character, character.oxygen, out character.oxygen, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
+                    
                 }
+                if (!deletecharacter) ++i;
             }
         }
     }
-    private void AddResourcesCharacter(CharacterController character, float statEnter, out float stat, float value)
+    private bool AddResourcesCharacter(CharacterController character, float statEnter, out float stat, float value)
     {
         stat = Mathf.Min(1,statEnter + value);
         if (stat == 1)
         {
             characters.Remove(character);
-            character.enabled = true;
+            character.gameObject.SetActive(true);
             character.state.Iddle();
+            return true;
         }
+        return false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -140,11 +148,7 @@ public class BuildController : MonoBehaviour
        
         if(state == StateBuild.PLACING)
             colliders.Add(other);
-        else if(other.gameObject.layer == 9)
-        {
-            
-            other.transform.parent.GetComponent<CharacterController>().state.Collide(this);
-        }
+
     }
     private void OnTriggerExit(Collider other)
     {
@@ -154,13 +158,15 @@ public class BuildController : MonoBehaviour
     public void Construct()
     {
         transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
+        transform.GetChild(0).GetComponent<Collider>().enabled = true;
         Destroy(GetComponent<Rigidbody>());
         state = StateBuild.CONSTRUCT;
         gameObject.layer = 10;
+        manager.listBuild.Add(this);
     }
     public void Destruct()
     {
-
+        manager.listBuild.Remove(this);
         Destroy(this.gameObject);
     }
 
@@ -171,11 +177,12 @@ public class BuildController : MonoBehaviour
 
     public virtual void Interact(CharacterController character)
     {
+
         if(interactible && characters.Count < maxCharacter)
         {
             characters.Add(character);
-            manager.Selected.Remove(character);
-            character.enabled = false;
+            character.Select = false;
+            character.gameObject.SetActive(false);
         }
         
 

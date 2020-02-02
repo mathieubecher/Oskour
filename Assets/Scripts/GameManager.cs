@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Build Settings")]
     [SerializeField]
     private BuildController[] build;
-    public BuildController[] listBuild;
+    public List<BuildController> listBuild;
     [Range(0, 100)]
     public float rangeBuildEffect;
     public int resources = 0;
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        listBuild = new List<BuildController>();
         Selected = new List<CharacterController>();
         pointer = Camera.main.GetComponent<CameraPointer>();
        

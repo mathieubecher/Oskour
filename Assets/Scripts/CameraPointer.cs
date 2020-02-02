@@ -79,9 +79,13 @@ public class CameraPointer : MonoBehaviour
                 }
                 else if(hit.collider.gameObject.layer == 10)
                 {
-                    foreach (CharacterController character in manager.Selected)
+                    int i = 0;
+                    while(i< manager.Selected.Count)
                     {
+                        CharacterController character = manager.Selected[i];
                         character.GoToInteract(hit.collider.gameObject.GetComponent<BuildController>());
+                        if (character.Select) ++i;
+                        else manager.Selected.Remove(character);
                     }
                 }
             }

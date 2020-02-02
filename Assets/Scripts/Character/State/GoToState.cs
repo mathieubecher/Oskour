@@ -17,7 +17,7 @@ public class GoToState : State
     {
         controller.IA.isStopped = false;
         float dist = controller.IA.remainingDistance;
-        if (dist < 1 || (controller.transform.position - target).magnitude <= controller.IA.stoppingDistance)
+        if ((controller.transform.position - target).magnitude <= controller.IA.stoppingDistance)
             Exit();
 
 

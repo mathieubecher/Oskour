@@ -15,6 +15,16 @@ public class GoToInteract : GoToState
     public override void Update()
     {
         base.Update();
+        Ray ray = new Ray(controller.transform.position,(controller.transform.localRotation * Vector3.forward).normalized * 10);
+        Debug.DrawLine(controller.transform.position, controller.transform.position + (controller.transform.localRotation * Vector3.forward).normalized *10,Color.white,Time.deltaTime);
+        if (Physics.Raycast(ray, out RaycastHit hit,10,LayerMask.GetMask("Building")))
+        {
+            Debug.Log("trouvé");
+            if(hit.collider.transform.parent.gameObject.GetComponent<BuildController>() == build)
+            {
+                Exit();
+            }
+        }
     }
     public override void Exit()
     {
