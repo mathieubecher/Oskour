@@ -78,6 +78,7 @@ public class BuildController : MonoBehaviour
         state = StateBuild.CONSTRUCT;
         gameObject.layer = 10;
     }
+
     public virtual string ConditionToString()
     {
         return "1 poisson";

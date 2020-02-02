@@ -6,7 +6,8 @@ public class IddleState : State
 {
    public IddleState(CharacterController controller) : base(controller)
     {
-
+        controller.stateInfo = "Iddle";
+        controller.IA.isStopped = true;
     }
     public override void Update()
     {

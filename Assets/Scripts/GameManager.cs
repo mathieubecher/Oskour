@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private BuildController[] build;
     public int resources = 0;
-    public float destroy = 0.3f;
-    public float construct = 0.3f;
+    public float destroySpeed = 0.3f;
+    public float constructSpeed = 0.3f;
 
     [Space]
     public float timeScale = 10f;

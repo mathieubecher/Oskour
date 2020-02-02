@@ -8,8 +8,14 @@ public class GoToInteract : GoToState
     CharacterController.Interact state;
     public GoToInteract(CharacterController controller, CharacterController.Interact state, BuildController build) : base(controller,build.transform.position)
     {
+        controller.stateInfo = "GoToInteract";
         this.state = state;
         this.build = build;
+        controller.IA.isStopped = false;
+    }
+    public override void Update()
+    {
+        base.Update();
     }
     public override void Exit()
     {

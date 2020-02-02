@@ -5,14 +5,19 @@ using UnityEngine.AI;
 
 public class GoToState : State
 {
+    private Vector3 target;
     public GoToState(CharacterController controller, Vector3 target) : base(controller)
     {
+        this.target = target;
         controller.IA.SetDestination(target);
+        controller.stateInfo = "GoTo";
+        controller.IA.isStopped = false;
     }
     public override void Update()
     {
         float dist = controller.IA.remainingDistance;
-        if (dist != Mathf.Infinity && controller.IA.pathStatus == NavMeshPathStatus.PathComplete && controller.IA.remainingDistance == 0)
+        Debug.Log(dist);
+        if (dist < 1 || (controller.transform.position - target).magnitude <= controller.IA.stoppingDistance)
             Exit();
 
 
@@ -20,5 +25,6 @@ public class GoToState : State
     public override void Exit()
     {
         controller.state = new IddleState(controller);
+        
     }
 }

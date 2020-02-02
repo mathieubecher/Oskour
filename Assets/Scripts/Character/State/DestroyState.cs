@@ -8,20 +8,23 @@ public class DestroyState : State
     public DestroyState(CharacterController controller, BuildController build) : base(controller)
     {
         this.build = build;
+        controller.stateInfo = "Destruct";
+        controller.IA.isStopped = true;
     }
     public override void Update()
     {
-        if(build.State == BuildController.StateBuild.CONSTRUCT)
-            build.ConstructValue -= 0;
+        if (build != null && build.State == BuildController.StateBuild.CONSTRUCT)
+            build.ConstructValue -= Time.deltaTime * controller.manager.destroySpeed / controller.manager.timeScale;
+        else Iddle();
     }
     public override void Exit()
     {
 
     }
-    public override void Destroy(BuildController build) {
+    public override void Destruct(BuildController build) {
         if (build != this.build) controller.state = new GoToInteract(controller, CharacterController.Interact.DESTRUCT, build);
     }
-    public override void Create(BuildController build) {
+    public override void Construct(BuildController build) {
         if (build != this.build) controller.state = new GoToInteract(controller, CharacterController.Interact.CONSTRUCT, build);
         else controller.state = new ConstructState(controller, build);
     }

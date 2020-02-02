@@ -11,9 +11,10 @@ public abstract class State
     }
     public abstract void Update();
     public abstract void Exit();
-    public virtual void Destroy(BuildController build) { controller.state = new GoToInteract(controller, CharacterController.Interact.DESTRUCT, build); }
-    public virtual void Create(BuildController build) { controller.state = new GoToInteract(controller, CharacterController.Interact.CONSTRUCT, build); }
-    public virtual void Iddle() { controller.state = new IddleState(controller); }
+    public virtual void Destruct(BuildController build) { controller.state = new GoToInteract(controller, CharacterController.Interact.DESTRUCT, build); }
+    public virtual void Construct(BuildController build) { controller.state = new GoToInteract(controller, CharacterController.Interact.CONSTRUCT, build); }
+    public virtual void Iddle() { }
+    public virtual void GoTo(Vector3 target) { controller.state = new GoToState(controller,target); }
     public virtual void Interact(BuildController build) { controller.state = new GoToInteract(controller, CharacterController.Interact.INTERACT, build); }
 
 }
