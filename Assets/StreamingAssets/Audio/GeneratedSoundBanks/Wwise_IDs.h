@@ -13,8 +13,29 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_MANQUE_OXYGENE = 2950388601U;
+        static const AkUniqueID PLAY_RESPIRATION_CALME_01 = 2964790935U;
+        static const AkUniqueID PLAY_RESPIRATION_CALME_02 = 2964790932U;
+        static const AkUniqueID PLAY_RESPIRATION_RAPIDE_01 = 3805364962U;
+        static const AkUniqueID PLAY_RESPIRATION_RAPIDE_02 = 3805364961U;
+        static const AkUniqueID PLAY_STAMINA_MULTIPLE = 1885017876U;
+        static const AkUniqueID PLAY_STAMINA_SIMPLE = 1480292262U;
+        static const AkUniqueID STOP_MANQUE_OXYGENE = 4252225699U;
+        static const AkUniqueID STOP_RESPIRATION_CALME_01 = 1132729357U;
+        static const AkUniqueID STOP_RESPIRATION_CALME_02 = 1132729358U;
+        static const AkUniqueID STOP_RESPIRATION_RAPIDE_01 = 1164357412U;
+        static const AkUniqueID STOP_RESPIRATION_RAPIDE_02 = 1164357415U;
+        static const AkUniqueID STOP_STAMINA_MULTIPLE = 1158293510U;
+        static const AkUniqueID STOP_STAMINA_SIMPLE = 2542171332U;
+        static const AkUniqueID STOP_UNDERWATER_AMBIENCE = 638727314U;
         static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID UNDERWATER_AMBIENCE = 259372889U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID MODIFY_RESPIRATION_FREQUENCY = 3561601651U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {

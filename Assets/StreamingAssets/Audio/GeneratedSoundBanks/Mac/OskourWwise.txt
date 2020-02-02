@@ -1,6 +1,74 @@
 Event	ID	Name			Wwise Object Path	Notes
+	259372889	Underwater_ambience			\Default Work Unit\Underwater_ambience	
+	638727314	Stop_Underwater_ambience			\Default Work Unit\Stop_Underwater_ambience	
+	1132729357	Stop_Respiration_Calme_01			\Default Work Unit\Stop_Respiration_Calme_01	
+	1132729358	Stop_Respiration_Calme_02			\Default Work Unit\Stop_Respiration_Calme_02	
+	1158293510	Stop_Stamina_Multiple			\Default Work Unit\Stop_Stamina_Multiple	
+	1164357412	Stop_Respiration_Rapide_01			\Default Work Unit\Stop_Respiration_Rapide_01	
+	1164357415	Stop_Respiration_Rapide_02			\Default Work Unit\Stop_Respiration_Rapide_02	
+	1480292262	Play_Stamina_Simple			\Default Work Unit\Play_Stamina_Simple	
+	1885017876	Play_Stamina_Multiple			\Default Work Unit\Play_Stamina_Multiple	
+	2542171332	Stop_Stamina_Simple			\Default Work Unit\Stop_Stamina_Simple	
+	2950388601	Play_Manque_oxygene			\Default Work Unit\Play_Manque_oxygene	
+	2964790932	Play_Respiration_Calme_02			\Default Work Unit\Play_Respiration_Calme_02	
+	2964790935	Play_Respiration_Calme_01			\Default Work Unit\Play_Respiration_Calme_01	
 	3157003241	Test			\Default Work Unit\Test	
+	3805364961	Play_Respiration_Rapide_02			\Default Work Unit\Play_Respiration_Rapide_02	
+	3805364962	Play_Respiration_Rapide_01			\Default Work Unit\Play_Respiration_Rapide_01	
+	4252225699	Stop_Manque_oxygene			\Default Work Unit\Stop_Manque_oxygene	
+
+Effect plug-ins	ID	Name	Type				Notes
+	45547760	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
+	67178680	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+	211969643	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+	343558290	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+	370115418	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+	521300229	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+	563222385	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
+	649936365	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
+	672175226	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
+	672970018	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+	705244155	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
+	712129034	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
+	720853699	Wwise_Parametric_EQ_(Custom)	Wwise Parametric EQ			
+	831518810	Wwise_RoomVerb_(Custom)	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	510792075	Phrase 2	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Phrase 2_CCC510E4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test\Phrase 2		2507340
+	20642613	Three_Low_submarine_cry_silence_before	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Three_Low_submarine_cry_silence_before_1B67ABFF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Ambience_elements\Low Submarine Sound\Three_Low_submarine_cry_silence_before		451604
+	21753682	whales_cry	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\whales_cry_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Whales\whales_cry		55770
+	105992950	Expiration Type 01	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 01 - 02_92172E63.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 02\Respiration\Expiration Type 01		28115
+	114349610	whales_cry_5	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\whales_cry_5_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Whales\whales_cry_5		395927
+	125218694	Repiration Type 01 - 06	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 01 - 06_5721C50C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 02\Respiration\Expirations\Repiration Type 01 - 06		15188
+	172080907	Manque Oxygene 01	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Stamina Simple - 02_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Manque_oxygene\Manque Oxygene 01		54848
+	188374417	Repiration Type 01 - 01	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 01 - 01_4C585420.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 02\Respiration\Expirations\Repiration Type 01 - 01		10403
+	223747933	Repiration Type 01 - 05	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 01 - 05_565E7754.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 02\Repiration Type 01 - 05		33146
+	250153729	whales_cry_4	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\whales_cry_4_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Whales\whales_cry_4		308201
+	281097748	Expiration 2	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 03 - 04_87AF73CC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 01\Expirations\Expiration 2		15136
+	282590047	Stamina Simple - 03	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Stamina Simple - 03_0514DBD8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Manque_oxygene\Stamina Simple - 03		43739
+	330586582	whales_cry_3	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\whales_cry_3_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Whales\whales_cry_3		538387
+	376464674	horror_ambience_2	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\horror_ambience_2_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Ambience_elements\Horror Ambience\horror_ambience_2		1734889
+	422324325	Two_Low_submarine_cry	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Two_Low_submarine_cry_F0747EB8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Ambience_elements\Low Submarine Sound\Two_Low_submarine_cry		291064
+	455574895	Three_Low_submarine_cry	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Three_Low_submarine_cry_06AEA145.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Ambience_elements\Low Submarine Sound\Three_Low_submarine_cry		395661
+	474752918	Expiration 3	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 03 - 04_54FAEC34.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 01\Expirations\Expiration 3		14134
+	510792075	Phrase 2	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Phrase 2_C8C53D54.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test\Phrase 2		200610
+	548206216	Underwater_02	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Underwater_9B96ECC7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Underwater\Underwater_02		747046
+	582287287	Inspiration 3	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 03 - 02_1B4A76D3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 01\Inspiration\Inspiration 3		13011
+	586098695	Expiration 1	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 03 - 03_B86DD532.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 01\Expirations\Expiration 1		16754
+	586405997	Low_submarine_cry	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Low_submarine_cry_904EF6E0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Ambience_elements\Low Submarine Sound\Low_submarine_cry		97045
+	600504965	Repiration Type 01 - 03	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 01 - 03_0AB14148.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 02\Repiration Type 01 - 03		41342
+	608325220	Stamina Multiple - 03	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Stamina Multiple - 03_968442DB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Stamina Multiple\Stamina Multiple - 03		50489
+	656612288	whales_cry_2	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\whales_cry_2_6296B0F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Whales\whales_cry_2		386671
+	712287366	Repiration Type 02 - 04	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 02 - 04_FA56470C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Rapide 01\Repiration Type 02 - 04		34707
+	714631191	Inspiration 1	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 03 - 03_0709CACE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 01\Inspiration\Inspiration 1		12617
+	765017002	Repiration Type 02 - 03	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 02 - 03_0B36473B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Rapide 01\Repiration Type 02 - 03		39640
+	790329340	Stamina Multiple - 01	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Stamina Multiple - 01_3929A441.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Stamina Multiple\Stamina Multiple - 01		99127
+	815132754	Repiration Type 02 - 01	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 02 - 01_7F8B1615.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Rapide 01\Repiration Type 02 - 01		46544
+	842067846	Inspiration 2	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 03 - 01_6E6BFD28.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 01\Inspiration\Inspiration 2		11433
+	860964560	Stamina Multiple - 02	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Stamina Multiple - 02_3709B267.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Stamina Multiple\Stamina Multiple - 02		60317
+	898951812	Stamina Simple - 01	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Stamina Simple - 01_5D03E7C9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Stamina Simple\Stamina Simple - 01		73883
+	917801709	Repiration Type 01 - 04	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 01 - 04_360BD06A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Calme 02\Repiration Type 01 - 04		41051
+	918811913	horror_ambience_1	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\horror_ambience_1_A6C843ED.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Ambience_elements\Horror Ambience\horror_ambience_1		423865
+	939164987	Repiration Type 04	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 04_6704773E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Rapide 02\Repiration Type 04		158427
+	1018782638	Repiration Type 02 - 02	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Repiration Type 02 - 02_A2A15730.wem		\Actor-Mixer Hierarchy\Default Work Unit\Respirations\Respiration Rapide 01\Repiration Type 02 - 02		40123
+	1054380156	Low_submarine_drone	C:\Users\Propriétaire\Desktop\GGJ-Oskour\WwiseOskour\.cache\Mac\SFX\Low_submarine_drone_D6A8480A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Underwater-soundscape\Ambience_elements\Low Submarine Sound\Low_submarine_drone		296914
 

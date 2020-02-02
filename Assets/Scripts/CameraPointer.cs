@@ -112,6 +112,7 @@ public class CameraPointer : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, 1000, LayerMask.GetMask("Default")))
         {
+
             if (Vector3.Angle(hit.normal, Vector3.up) < 10)
             {
                 toBuild.transform.position = hit.point;
@@ -140,8 +141,20 @@ public class CameraPointer : MonoBehaviour
         {
             Destroy(toBuild.gameObject);
         }
-        state = StatePointer.CONSTRUCT;
-        toBuild = Instantiate(build,Vector3.zero,Quaternion.identity);
+        
+        List<BuildController.BuildType> requirestolist = new List<BuildController.BuildType>();
+        for (int i = 0; i < build.requires.Length; ++i) requirestolist.Add(build.requires[i]);
+        foreach (BuildController presentbuild in manager.listBuild)
+        {
+            requirestolist.Remove(presentbuild.type);
+        }
+        Debug.Log(requirestolist.Count);
+        if(requirestolist.Count == 0)
+        {
+            state = StatePointer.CONSTRUCT;
+            toBuild = Instantiate(build, Vector3.zero, Quaternion.identity);
+        }
+            
     }
 
     /* Fonction a remplir desgtroy building*/
