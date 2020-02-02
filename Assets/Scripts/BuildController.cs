@@ -12,7 +12,7 @@ public class BuildController : MonoBehaviour
     }
     public enum BuildType
     {
-        FERME, DORTOIRE, ENTREPOT, BRAS, OXYGENATEUR, PHARE, KAFE, PIKOUZ, YELLOW, ELECTRICITE
+        FERME, DORTOIRE, ENTREPOT, BRAS, OXYGENATEUR, PHARE, KAFE, PIKOUZ, YELLOW, ELECTRICITE, RUINE
     }
     protected enum Resources
     {
