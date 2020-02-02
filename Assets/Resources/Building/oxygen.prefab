@@ -56,11 +56,12 @@ MonoBehaviour:
   type: 4
   constructValue: 0
   interactible: 1
-  resourceType: 2
-  bonusTime: 7
+  resourceType: 1
+  bonusTime: 5
   characters: []
   maxCharacter: 5
-  requires: 00000000
+  entreposable: 0
+  requires: 09000000
   constructible: 0
 --- !u!65 &5740920986888511458
 BoxCollider:
@@ -117,7 +118,7 @@ NavMeshObstacle:
   m_Shape: 0
   m_Extents: {x: 6.707308, y: 7.626615, z: 6.707308}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 3.9, y: -0.3300546, z: -5.594652}
   m_TimeToStationary: 0.5
