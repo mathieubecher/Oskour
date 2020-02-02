@@ -14,7 +14,7 @@ public class BuildController : MonoBehaviour
     {
         FERME, DORTOIRE, ENTREPOT, BRAS, OXYGENATEUR, PHARE, KAFE, PIKOUZ, YELLOW, ELECTRICITE
     }
-    enum Resources
+    protected enum Resources
     {
         ENERGY, OXYGEN, FOOD
     }
@@ -22,8 +22,8 @@ public class BuildController : MonoBehaviour
     [SerializeField] Material error;
     [SerializeField] Material basic;
 
-    Renderer renderer;
-    StateBuild state;
+    protected Renderer renderer;
+    protected StateBuild state;
 
     //[HideInInspector]
     public List<Collider> colliders;
@@ -39,7 +39,7 @@ public class BuildController : MonoBehaviour
     [Header("Interactible")]
     public bool interactible = false;
     [SerializeField]
-    private Resources resourceType;
+    protected Resources resourceType;
     public float bonusTime;
     public List<CharacterController> characters;
     public int maxCharacter = 5;
@@ -48,25 +48,26 @@ public class BuildController : MonoBehaviour
     [Header("Require")]
     public BuildType[] requires;
 
-    
+    public bool alreadyCreate = false;
 
     public float ConstructValue { get => constructValue; set{
         constructValue = value;
             if (value <= 0)
             {
                 Destruct();
-                FindObjectOfType<GameManager>().resources += 1;
+                manager.resources += 1;
             }
             else if (value >= 1)
             {
                 state = StateBuild.ACTIF;
+                manager.listBuild.Add(this);
             }
             else state = StateBuild.CONSTRUCT;
     } }
 
     public StateBuild State { get => state;}
 
-    private GameManager manager;
+    protected GameManager manager;
     [HideInInspector]
     public bool constructible;
     // Start is called before the first frame update
@@ -76,6 +77,11 @@ public class BuildController : MonoBehaviour
         manager =  FindObjectOfType<GameManager>();
         colliders = new List<Collider>();
         renderer = transform.GetChild(0).GetComponent<Renderer>();
+        if (alreadyCreate)
+        {
+            Construct();
+            ConstructValue = 1;
+        }
     }
 
     void Constructible()
@@ -86,16 +92,7 @@ public class BuildController : MonoBehaviour
         }
         else
         {
-            List<BuildType> requirestolist = new List<BuildType>();
-            for (int i = 0; i < requires.Length; ++i) requirestolist.Add(requires[i]);
-            foreach(BuildController build in manager.listBuild)
-            {
-                if((transform.position - build.transform.position).magnitude <= manager.rangeBuildEffect && requirestolist.Exists(x =>x == build.type))
-                {
-                    requirestolist.Remove(build.type);
-                }
-            }
-            constructible = requirestolist.Count == 0;
+            constructible = true;
 
         }
     }
@@ -183,15 +180,16 @@ public class BuildController : MonoBehaviour
     }
     public void Construct()
     {
+        
         transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
         transform.GetChild(0).GetComponent<Collider>().enabled = true;
         Destroy(GetComponent<Rigidbody>());
         state = StateBuild.CONSTRUCT;
         gameObject.layer = 10;
-        manager.listBuild.Add(this);
     }
     public void Destruct()
     {
+        Debug.Log("Destroy");
         manager.listBuild.Remove(this);
         Destroy(this.gameObject);
     }
