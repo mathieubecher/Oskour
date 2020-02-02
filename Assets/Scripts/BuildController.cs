@@ -137,9 +137,14 @@ public class BuildController : MonoBehaviour
                 {
                     if(manager.listBuild[i].type == BuildType.ENTREPOT)
                     {
-
+                        entrepots.Add((Entrepot)manager.listBuild[i]);
                     }
                 }
+                if(entrepots.Count > 0)
+                {
+                    value = value / entrepots.Count;
+                }
+                
             }
         }
     }
