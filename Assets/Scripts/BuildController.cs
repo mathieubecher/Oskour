@@ -109,61 +109,62 @@ public class BuildController : MonoBehaviour
 
         if(state == StateBuild.ACTIF)
         {
-            float value = bonusTime * Time.deltaTime;
-            int i = 0;
-            while (i < characters.Count)
-            {
-                CharacterController character = characters[i];
-                value -= bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime;
-                bool deletecharacter = false;
-                if (value > 0)
-                {
-                    
-                    if (resourceType == Resources.FOOD) deletecharacter = AddResourcesCharacter(character, character.food, out character.food, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
-                    else if (resourceType == Resources.ENERGY) deletecharacter = AddResourcesCharacter(character, character.energy, out character.energy, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
-                    else deletecharacter = AddResourcesCharacter(character, character.oxygen, out character.oxygen, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
-                    
-                }
-                if (!deletecharacter) ++i;
-            }
-            if(value > 0 && entreposable)
-            {
-                i = 0;
-                List<Entrepot> entrepots = new List<Entrepot>();
-                while (i < manager.listBuild.Count)
-                {
-                    if(manager.listBuild[i].type == BuildType.ENTREPOT)
-                    {
-                        entrepots.Add((Entrepot)manager.listBuild[i]);
-                    }
-                }
-                if(entrepots.Count > 0)
-                {
-                    value = value / entrepots.Count;
-                    foreach (Entrepot entrepot in entrepots)
-                    {
-                        if(resourceType == Resources.FOOD)
-                            entrepot.stockFood += value;
-                        if (resourceType == Resources.ENERGY)
-                            entrepot.stockCoffee += value;
-                    }
-                    foreach (Entrepot entrepot in entrepots) entrepot.stockFood += value;
-                }
-                
-            }
+            ActiveComportement();
         }
     }
-    private bool AddResourcesCharacter(CharacterController character, float statEnter, out float stat, float value)
+    protected virtual void ActiveComportement()
+    {
+        float value = bonusTime * Time.deltaTime;
+        int i = 0;
+        while (i < characters.Count)
+        {
+            CharacterController character = characters[i];
+            value -= bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime;
+            bool deletecharacter = false;
+            if (value > 0)
+            {
+
+                if (resourceType == Resources.FOOD) deletecharacter = AddResourcesCharacter(character, character.food, out character.food, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
+                else if (resourceType == Resources.ENERGY) deletecharacter = AddResourcesCharacter(character, character.energy, out character.energy, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
+                else deletecharacter = AddResourcesCharacter(character, character.oxygen, out character.oxygen, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
+
+            }
+            if (!deletecharacter) ++i;
+        }
+        if (value > 0 && entreposable)
+        {
+            i = 0;
+            List<Entrepot> entrepots = new List<Entrepot>();
+            while (i < manager.listBuild.Count)
+            {
+                if (manager.listBuild[i].type == BuildType.ENTREPOT)
+                {
+                    entrepots.Add((Entrepot)manager.listBuild[i]);
+                }
+            }
+            if (entrepots.Count > 0)
+            {
+                value = value / entrepots.Count;
+                foreach (Entrepot entrepot in entrepots)
+                {
+                    if (resourceType == Resources.FOOD)
+                        entrepot.stockFood += value;
+                    if (resourceType == Resources.ENERGY)
+                        entrepot.stockCoffee += value;
+                }
+                foreach (Entrepot entrepot in entrepots) entrepot.stockFood += value;
+            }
+
+        }
+    }
+    protected bool AddResourcesCharacter(CharacterController character, float statEnter, out float stat, float value)
     {
         stat = Mathf.Min(1,statEnter + value);
-        if (stat == 1)
-        {
-            characters.Remove(character);
-            character.gameObject.SetActive(true);
-            character.state.Iddle();
-            return true;
-        }
-        return false;
+        if (!(stat >= 1)) return false;
+        characters.Remove(character);
+        character.gameObject.SetActive(true);
+        character.state.Iddle();
+        return true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -181,7 +182,7 @@ public class BuildController : MonoBehaviour
     public void Construct()
     {
         
-        transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
+        //transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
         transform.GetChild(0).GetComponent<Collider>().enabled = true;
         Destroy(GetComponent<Rigidbody>());
         state = StateBuild.CONSTRUCT;
