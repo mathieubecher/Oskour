@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 
-public class Pick : CameraState
+public class CameraPick : CameraState
 {
     private Vector3 _startSelectionDrag;
     private bool _select;
-    public Pick(CameraPointer controller) : base(controller)
+    public CameraPick(CameraPointer controller) : base(controller)
     {
-        Debug.Log("Pick");
+        
     }
     public override void Click()
     {
         Ray ray = controller.mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray: ray,hitInfo: out var hit, layerMask: LayerMask.GetMask("Character"), maxDistance: 1000))
+        if (Physics.Raycast(ray: ray,hitInfo: out RaycastHit hit, layerMask: LayerMask.GetMask("Character"), maxDistance: 1000))
         {
             if (!Input.GetKey(KeyCode.LeftShift)) controller.manager.ResetSelect();
             Debug.Log(hit.collider.gameObject.layer);
@@ -38,13 +38,13 @@ public class Pick : CameraState
     {
         Ray ray = controller.mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (!Physics.Raycast(ray, out var hit)) return;
+        if (!Physics.Raycast(ray, out RaycastHit hit)) return;
         switch (hit.collider.gameObject.layer)
         {
             case 0:
             {
                 Debug.DrawLine(hit.point, hit.point + hit.normal * 10, Color.red, 10);
-                foreach (var character in controller.manager.Selected)
+                foreach (CharacterController character in controller.manager.Selected)
                 {
                     character.GoTo(hit.point);
                 }
@@ -56,7 +56,7 @@ public class Pick : CameraState
                 var i = 0;
                 while (i < controller.manager.Selected.Count)
                 {
-                    var character = controller.manager.Selected[i];
+                    CharacterController character = controller.manager.Selected[i];
                     character.GoToInteract(hit.collider.gameObject.GetComponent<BuildController>());
                     if (character.Select) ++i;
                     else controller.manager.Selected.Remove(character);
@@ -72,10 +72,10 @@ public class Pick : CameraState
     {
         if (resetSelect) controller.manager.ResetSelect();
 
-        var selectionBox = new Rect(Mathf.Min(_startSelectionDrag.x, Input.mousePosition.x), Mathf.Min(_startSelectionDrag.y, Input.mousePosition.y),
+        Rect selectionBox = new Rect(Mathf.Min(_startSelectionDrag.x, Input.mousePosition.x), Mathf.Min(_startSelectionDrag.y, Input.mousePosition.y),
             Mathf.Abs(_startSelectionDrag.x - Input.mousePosition.x),
             Mathf.Abs(_startSelectionDrag.y - Input.mousePosition.y));
-        foreach (var character in controller.manager.Characters)
+        foreach (CharacterController character in controller.manager.Characters)
         {
             if (selectionBox.Contains(controller.mainCamera.WorldToScreenPoint(character.transform.position)))
             {
@@ -83,4 +83,8 @@ public class Pick : CameraState
             }
         }
     }
+}
+
+public class RayCastHit
+{
 }

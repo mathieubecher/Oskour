@@ -7,7 +7,7 @@ public class Entrepot : BuildController
     public float stockFood;
     public float stockCoffee;
 
-    protected override void ActiveComportement()
+    protected override void ActiveComportment()
     {
         int i = 0;
         while (i < characters.Count)

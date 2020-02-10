@@ -18,7 +18,7 @@ public class CameraPointer : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        state = new Pick(this);
+        state = new CameraPick(this);
         manager = (GameManager)FindObjectOfType<GameManager>();
         mainCamera = GetComponent<UnityEngine.Camera>();
     }
@@ -38,13 +38,13 @@ public class CameraPointer : MonoBehaviour
     {
         var requiresToList = build.requires.ToList();
 
-        foreach (var presentBuild in manager.listBuild)
+        foreach (BuildController presentBuild in manager.listBuild)
         {
             requiresToList.Remove(presentBuild.type);
         }
         if(requiresToList.Count == 0)
         {
-            var toBuild = Instantiate(build, Vector3.zero, Quaternion.identity);
+            BuildController toBuild = Instantiate(build, Vector3.zero, Quaternion.identity);
             state.ConstructState(toBuild);
         }
         else

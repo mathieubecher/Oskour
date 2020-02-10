@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEditor;
+using UnityEngine.Serialization;
+
 public class BuildController : MonoBehaviour
 {
     public enum StateBuild
@@ -18,32 +21,32 @@ public class BuildController : MonoBehaviour
     {
         ENERGY, OXYGEN, FOOD
     }
-    [SerializeField] Material placing;
-    [SerializeField] Material error;
-    [SerializeField] Material basic;
+    [SerializeField] private Material placing;
+    [SerializeField] private Material error;
+    [SerializeField] private Material basic;
 
-    protected Renderer renderer;
-    protected StateBuild state;
+    private new Renderer renderer;
+    private StateBuild state;
 
     //[HideInInspector]
     public List<Collider> colliders;
 
     [Header("Description")]
-    public string name;
+    public new string name;
     public string description;
-    public int tier = 0;
+    public int tier;
     public BuildType type;
     [SerializeField, Range(0, 1)]
     protected float constructValue = 0;
 
-    [Header("Interactible")]
-    public bool interactible = false;
+    [Header("Interactive")]
+    public bool interactive = false;
     [SerializeField]
     protected Resources resourceType;
     public float bonusTime;
     public List<CharacterController> characters;
     public int maxCharacter = 5;
-    public bool entreposable = false;
+    public bool storable = false;
 
     [Header("Require")]
     public BuildType[] requires;
@@ -65,97 +68,92 @@ public class BuildController : MonoBehaviour
             else state = StateBuild.CONSTRUCT;
     } }
 
-    public StateBuild State { get => state;}
+    public StateBuild State => state;
 
     protected GameManager manager;
     [HideInInspector]
     public bool constructible;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         characters = new List<CharacterController>();
         manager =  FindObjectOfType<GameManager>();
         colliders = new List<Collider>();
         renderer = transform.GetChild(0).GetComponent<Renderer>();
-        if (alreadyCreate)
-        {
-            Construct();
-            ConstructValue = 1;
-        }
+        if (!alreadyCreate) return;
+        Construct();
+        ConstructValue = 1;
     }
 
-    void Constructible()
+    private void Constructable()
     {
-        if (colliders.Count > 0)
-        {
-            constructible = false;
-        }
-        else
-        {
-            constructible = true;
-
-        }
+        constructible = colliders.Count <= 0;
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (state == StateBuild.PLACING) Constructible();
-        if (state == StateBuild.PLACING || state == StateBuild.CONSTRUCT)
-        {
-            //if (!constructible && renderer.material != error) renderer.material = error;
-            //else if ( renderer.material != placing) renderer.material = placing;
-        }
-        //else if(state == StateBuild.ACTIF && renderer.material != basic) renderer.material = basic;
-
-        if(state == StateBuild.ACTIF)
-        {
-            ActiveComportement();
-        }
+        if (state == StateBuild.PLACING) Constructable();
+        
     }
-    protected virtual void ActiveComportement()
+    protected virtual void ActiveComportment()
     {
         float value = bonusTime * Time.deltaTime;
         int i = 0;
         while (i < characters.Count)
         {
             CharacterController character = characters[i];
-            value -= bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime;
-            bool deletecharacter = false;
+            value -= bonusTime / (maxCharacter * manager.timeScale) * Time.deltaTime;
+            bool deleteCharacter = false;
             if (value > 0)
             {
-
-                if (resourceType == Resources.FOOD) deletecharacter = AddResourcesCharacter(character, character.food, out character.food, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
-                else if (resourceType == Resources.ENERGY) deletecharacter = AddResourcesCharacter(character, character.energy, out character.energy, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
-                else deletecharacter = AddResourcesCharacter(character, character.oxygen, out character.oxygen, bonusTime / ((float)maxCharacter * manager.timeScale) * Time.deltaTime);
-
+                switch (resourceType)
+                {
+                    case Resources.FOOD:
+                        deleteCharacter = AddResourcesCharacter(character, character.food, out character.food, bonusTime / (maxCharacter * manager.timeScale) * Time.deltaTime);
+                        break;
+                    case Resources.ENERGY:
+                        deleteCharacter = AddResourcesCharacter(character, character.energy, out character.energy, bonusTime / (maxCharacter * manager.timeScale) * Time.deltaTime);
+                        break;
+                    case Resources.OXYGEN:
+                        deleteCharacter = AddResourcesCharacter(character, character.oxygen, out character.oxygen, bonusTime / (maxCharacter * manager.timeScale) * Time.deltaTime);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
-            if (!deletecharacter) ++i;
+            if (!deleteCharacter) ++i;
         }
-        if (value > 0 && entreposable)
+
+        if (!(value > 0) || !storable) return;
+        i = 0;
+        List<Entrepot> entrepots = new List<Entrepot>();
+        while (i < manager.listBuild.Count)
         {
-            i = 0;
-            List<Entrepot> entrepots = new List<Entrepot>();
-            while (i < manager.listBuild.Count)
+            if (manager.listBuild[i].type == BuildType.ENTREPOT)
             {
-                if (manager.listBuild[i].type == BuildType.ENTREPOT)
-                {
-                    entrepots.Add((Entrepot)manager.listBuild[i]);
-                }
+                entrepots.Add((Entrepot)manager.listBuild[i]);
             }
-            if (entrepots.Count > 0)
-            {
-                value = value / entrepots.Count;
-                foreach (Entrepot entrepot in entrepots)
-                {
-                    if (resourceType == Resources.FOOD)
-                        entrepot.stockFood += value;
-                    if (resourceType == Resources.ENERGY)
-                        entrepot.stockCoffee += value;
-                }
-                foreach (Entrepot entrepot in entrepots) entrepot.stockFood += value;
-            }
-
         }
+
+        if (entrepots.Count <= 0) return;
+        value /= entrepots.Count;
+        foreach (Entrepot entrepot in entrepots)
+        {
+            switch (resourceType)
+            {
+                case Resources.FOOD:
+                    entrepot.stockFood += value;
+                    break;
+                case Resources.ENERGY:
+                    entrepot.stockCoffee += value;
+                    break;
+                case Resources.OXYGEN:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+        foreach (Entrepot entrepot in entrepots) entrepot.stockFood += value;
     }
     protected bool AddResourcesCharacter(CharacterController character, float statEnter, out float stat, float value)
     {
@@ -182,13 +180,14 @@ public class BuildController : MonoBehaviour
     public void Construct()
     {
         
-        //transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
+        transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
         transform.GetChild(0).GetComponent<Collider>().enabled = true;
         Destroy(GetComponent<Rigidbody>());
         state = StateBuild.CONSTRUCT;
         gameObject.layer = 10;
     }
-    public void Destruct()
+
+    private void Destruct()
     {
         Debug.Log("Destroy");
         manager.listBuild.Remove(this);
@@ -202,14 +201,11 @@ public class BuildController : MonoBehaviour
 
     public virtual void Interact(CharacterController character)
     {
+        if (!interactive || characters.Count >= maxCharacter) return;
+        characters.Add(character);
+        character.Select = false;
+        character.gameObject.SetActive(false);
 
-        if(interactible && characters.Count < maxCharacter)
-        {
-            characters.Add(character);
-            character.Select = false;
-            character.gameObject.SetActive(false);
-        }
-        
 
     }
     

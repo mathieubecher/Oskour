@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     public BuildController[] Build { get => build; set => build = value; }
 
 
-    CameraPointer pointer;
+    private CameraPointer _pointer;
 
 
     // Start is called before the first frame update
@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     {
         
         Selected = new List<CharacterController>();
-        pointer = Camera.main.GetComponent<CameraPointer>();
-       
+        _pointer = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraPointer>();
+
     }
 
     public void Select(CharacterController character)
@@ -65,10 +65,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G)) pointer.PlaceBuilding(build[0]);
+        if(Input.GetKeyDown(KeyCode.G)) _pointer.PlaceBuilding(build[0]);
     }
     public void PlaceBuilding(BuildController build)
     {
-        pointer.PlaceBuilding(build);
+        _pointer.PlaceBuilding(build);
     }
 }

@@ -14,24 +14,36 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScript/ButonBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScript/Destroy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/YSM.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/DestroyState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/BuildingController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/State/Construct.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/State/Pick.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/BuildController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIScript/ButonBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIScript/Destroy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/State/Pick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/State/Construct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/ActifBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/PlacingBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/ActiveBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/StateBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/ConstructBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildingController.cs" />
       </list>
     </option>
   </component>
@@ -63,10 +75,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="15984">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="9808">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15984" />
+      <option name="pid" value="9808" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -81,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581330324078</updated>
-      <workItem from="1581330327286" duration="3301000" />
+      <workItem from="1581330327286" duration="22863000" />
     </task>
     <servers />
   </component>

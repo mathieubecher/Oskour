@@ -12,6 +12,6 @@
     public abstract void Hover();
 
     public virtual void PickState() { }
-    public virtual void ConstructState(BuildController build) { controller.state = new Construct(controller, build); }
+    public virtual void ConstructState(BuildController build) { controller.state = new CameraConstruct(controller, build); }
 
 }

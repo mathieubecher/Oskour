@@ -21,8 +21,8 @@ public class CharacterController : MonoBehaviour
     public bool Select { get => select; set => select = value; }
     
     [Header("Information")]
-    public string name;
-    public string stateInfo = "Iddle";
+    public new string name;
+    public string stateInfo = "Idle";
     [Header("Statistique")]
     [Range(0,1)]
     public float food = 1;
@@ -35,12 +35,12 @@ public class CharacterController : MonoBehaviour
 
     [Header("Material")]
     [SerializeField]
-    Material selected;
+    private Material selected;
     [SerializeField]
-    Material unselect;
+    private Material unselect;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         manager = (GameManager)FindObjectOfType<GameManager>();
         IA = GetComponent<NavMeshAgent>();
@@ -49,7 +49,7 @@ public class CharacterController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
         IA.speed = manager.characterSpeed;
