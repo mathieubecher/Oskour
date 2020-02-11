@@ -54,6 +54,12 @@ public class GameManager : MonoBehaviour
         selected.Add(character);
 
     }
+
+    public void UnSelect(CharacterController character)
+    {
+        character.Select = false;
+        selected.Remove(character);
+    }
     public void ResetSelect()
     {
         foreach(CharacterController character in selected)
@@ -65,7 +71,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G)) _pointer.PlaceBuilding(build[0]);
     }
     public void PlaceBuilding(BuildController build)
     {

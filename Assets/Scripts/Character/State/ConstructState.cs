@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstructState : IddleState
+public class ConstructState : State
 {
-    BuildController build;
+    private readonly BuildController _build;
     public ConstructState(CharacterController controller, BuildController build) : base(controller)
     {
-        this.build = build;
+        this._build = build;
         controller.stateInfo = "Construct";
         controller.IA.isStopped = true;
     }
     public override void Update()
     {
-        base.Update();
-        if (build != null && build.State == BuildController.StateBuild.CONSTRUCT)
-            build.ConstructValue += Time.deltaTime * controller.manager.constructSpeed / controller.manager.timeScale;
-        else Iddle();
+        if (_build == null || _build.Active() || !_build.Interact(false, controller))
+        {
+            Idle();
+        }
         
     }
     public override void Exit()
@@ -25,16 +25,16 @@ public class ConstructState : IddleState
     }
     public override void Destruct(BuildController build)
     {
-        if (build != this.build) controller.state = new GoToInteract(controller, CharacterController.Interact.DESTRUCT, build);
+        if (build != this._build) controller.state = new GoToInteract(controller, CharacterController.Interact.DESTRUCT, build);
         else controller.state = new DestroyState(controller, build);
     }
     public override void Construct(BuildController build)
     {
-        if (build != this.build) controller.state = new GoToInteract(controller, CharacterController.Interact.CONSTRUCT, build);
+        if (build != this._build) controller.state = new GoToInteract(controller, CharacterController.Interact.CONSTRUCT, build);
     }
     public override void Interact(BuildController build)
     {
-        if (build != this.build) controller.state = new GoToInteract(controller, CharacterController.Interact.INTERACT, build);
-        else build.Interact(controller);
+        if (build != this._build) controller.state = new GoToInteract(controller, CharacterController.Interact.INTERACT, build);
+        else build.Interact(false, controller);
     }
 }

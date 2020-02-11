@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138261337050260171}
-  - component: {fileID: 2506843934616851303}
+  - component: {fileID: 2553581448379737846}
   - component: {fileID: 2003171648951480802}
   - component: {fileID: 5897044663668341580}
   - component: {fileID: -6354214773853974709}
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2506843934616851303
+--- !u!114 &2553581448379737846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,29 +44,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1318458997542994711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a782702b99c07b54bb8a417a63c09683, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f175c52bc215cb448fabe69b3128ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placing: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
-  error: {fileID: 2100000, guid: 91a2517dafd979745a8913ce2d25d87e, type: 2}
-  basic: {fileID: 2100000, guid: c64d4491f4926584a8a432d1b09ac97e, type: 2}
-  colliders: []
-  name: entrepot
-  description: entrepot
-  tier: 1
+  _manager: {fileID: 0}
+  name: Repository
+  description: Repository
   type: 2
-  constructValue: 0
-  interactive: 0
-  resourceType: 0
-  bonusTime: 0
-  characters: []
-  maxCharacter: 5
-  storable: 0
+  tier: 1
+  resourcesValue: 0
   requires: 
-  alreadyCreate: 0
-  constructible: 0
-  stockFood: 8
-  stockCoffee: 8
+  materials: {fileID: 0}
+  resources: []
 --- !u!65 &2003171648951480802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78,8 +67,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 76.983696, y: 50, z: 91.92174}
-  m_Center: {x: -2.4916801, y: 27.059998, z: -13.314308}
+  m_Size: {x: 76.983696, y: 10.8, z: 91.92174}
+  m_Center: {x: -2.4916801, y: 9.65, z: -13.314308}
 --- !u!54 &5897044663668341580
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -106,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 1318458997542994711}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f2ece632e44ab7b4cb09b12687b05b38, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -126,8 +115,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 11.877188, y: 14.476047, z: 16.15633}
-  m_Center: {x: -0.12847137, y: -6.738021, z: -2.9229426}
+  m_Size: {x: 11.04, y: 1.03, z: 14.34}
+  m_Center: {x: -0.12847137, y: -13.42, z: -2.2}
 --- !u!208 &602941097664070968
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -138,11 +127,11 @@ NavMeshObstacle:
   m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 5.938595, y: 7.238025, z: 8.078165}
+  m_Extents: {x: 5.52, y: 5.14, z: 7.17}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.1284714, y: -6.738021, z: -2.922943}
+  m_Center: {x: -0.1284714, y: -8.8, z: -2.2}
   m_TimeToStationary: 0.5
 --- !u!1001 &98333874206445698
 PrefabInstance:

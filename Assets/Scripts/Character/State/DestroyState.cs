@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyState : IddleState
+public class DestroyState : State
 {
     BuildController build;
     public DestroyState(CharacterController controller, BuildController build) : base(controller)
@@ -14,9 +14,7 @@ public class DestroyState : IddleState
     }
     public override void Update()
     {
-        if (build != null && (build.State == BuildController.StateBuild.CONSTRUCT || build.State == BuildController.StateBuild.ACTIF))
-            build.ConstructValue -= Time.deltaTime * controller.manager.destroySpeed / controller.manager.timeScale;
-        else Iddle();
+        if (build == null || !build.Interact(true,controller)) Idle();
     }
     public override void Exit()
     {
@@ -32,6 +30,6 @@ public class DestroyState : IddleState
     public override void Interact(BuildController build)
     {
         if (build != this.build) controller.state = new GoToInteract(controller, CharacterController.Interact.INTERACT, build);
-        else build.Interact(controller);
+        else build.Interact(true, controller);
     }
 }

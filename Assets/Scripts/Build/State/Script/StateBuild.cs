@@ -12,7 +12,7 @@ public abstract class StateBuild : StateMachineBehaviour
     protected static readonly int ConstructTrigger = Animator.StringToHash("Construct");
     
     protected Animator _animator;
-    protected BuildingController build;
+    protected BuildController build;
     
     protected StateList type;
     public StateList Type { get=>type; }
@@ -21,7 +21,7 @@ public abstract class StateBuild : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _animator = animator;
-        build = animator.GetComponent<BuildingController>();
+        build = animator.GetComponent<BuildController>();
         build.SetState(this);
     }
 
@@ -49,12 +49,13 @@ public abstract class StateBuild : StateMachineBehaviour
         // Implement code that sets up animation IK (inverse kinematics)
     }
 
-    public virtual void Interact(CharacterController character)
+    public virtual bool Interact(CharacterController character)
     {
-        
+        return false;
     }
-    public virtual void Construct(float value)
+    public virtual bool Construct(float value)
     {
         _animator.SetTrigger(ConstructTrigger);
+        return true;
     }
 }

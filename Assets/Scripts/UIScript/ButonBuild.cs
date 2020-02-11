@@ -11,10 +11,11 @@ public class ButonBuild : MonoBehaviour
     private GameObject go;
     public Button button;
     public float margX = 70;
+    private CameraPointer _cameraPointer;
 
     void Start()
     {
-        
+        _cameraPointer = FindObjectOfType<CameraPointer>();
     }
 
     public void AssociateBc()
@@ -48,16 +49,16 @@ public class ButonBuild : MonoBehaviour
 
     public void fonctionDeBuildDeMathieux()
     {
-        Debug.Log(bc);
-        StartCoroutine(waiter());
+        _cameraPointer.PlaceBuilding(bc);
+        //StartCoroutine(waiter());
         
     }
 
-    IEnumerator waiter()
+    private IEnumerator waiter()
     {
         
         yield return new WaitForSecondsRealtime(1);
-        FindObjectOfType<CameraPointer>().PlaceBuilding(bc);
+        _cameraPointer.PlaceBuilding(bc);
     }
 
     private void OnMouseOver()

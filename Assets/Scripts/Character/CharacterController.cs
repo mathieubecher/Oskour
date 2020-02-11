@@ -44,7 +44,7 @@ public class CharacterController : MonoBehaviour
     {
         manager = (GameManager)FindObjectOfType<GameManager>();
         IA = GetComponent<NavMeshAgent>();
-        state = new IddleState(this);
+        state = new IdleState(this);
         
     }
 
@@ -74,7 +74,7 @@ public class CharacterController : MonoBehaviour
     public void GoToInteract(BuildController build)
     {
         if (Input.GetKey(KeyCode.LeftControl)) state.Destruct(build);
-        else if (build.State == BuildController.StateBuild.ACTIF)
+        else if (build.Active())
             state.Interact(build);
         else state.Construct(build);
     }

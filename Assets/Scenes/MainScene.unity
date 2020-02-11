@@ -157,21 +157,20 @@ MonoBehaviour:
   - {fileID: 130004576}
   - {fileID: 2067672596}
   - {fileID: 778171050}
-  characterSpeed: 30
+  characterSpeed: 20
   foodRegress: 0.4
   oxygenRegress: 0.2
   energyRegress: 0.15
   build:
-  - {fileID: 2284733697305343802, guid: 0f130e81ab28b1d40ac7cddf53049e34, type: 3}
-  - {fileID: 2284733697305343802, guid: 53cd1b0736673d940b37d063a22a552b, type: 3}
-  - {fileID: 2284733697305343802, guid: e76973d151e3ba241b95e1e06ee0b4c5, type: 3}
-  - {fileID: 5463545887102736698, guid: 6871acea1ea571c48b060d0b8831967f, type: 3}
-  - {fileID: 2284733697305343802, guid: 0ca0cae9a10c1d447bb9976c9a548144, type: 3}
-  - {fileID: 2506843934616851303, guid: 78b87da355bc4b84d9151f28df99d1c2, type: 3}
-  - {fileID: 2284733697305343802, guid: 0241e1d43b72f654a9fdb94d50975747, type: 3}
-  - {fileID: 3411809755935344441, guid: bffbd7cdd3efc4f46982f82699331622, type: 3}
-  - {fileID: 2284733697305343802, guid: 12c7d2d6d7611804da1c8ef4f5e09890, type: 3}
-  - {fileID: 870241017127944795, guid: 31d35f6b77cfbda40bc2d2f98bcfc9ee, type: 3}
+  - {fileID: 2305255200433136861, guid: 31d35f6b77cfbda40bc2d2f98bcfc9ee, type: 3}
+  - {fileID: 5249635281240728499, guid: 12c7d2d6d7611804da1c8ef4f5e09890, type: 3}
+  - {fileID: 8663567320692580523, guid: bffbd7cdd3efc4f46982f82699331622, type: 3}
+  - {fileID: 5619008469150194156, guid: 0241e1d43b72f654a9fdb94d50975747, type: 3}
+  - {fileID: 2553581448379737846, guid: 78b87da355bc4b84d9151f28df99d1c2, type: 3}
+  - {fileID: 3425535643422752898, guid: 0ca0cae9a10c1d447bb9976c9a548144, type: 3}
+  - {fileID: 2568445159655549383, guid: 6871acea1ea571c48b060d0b8831967f, type: 3}
+  - {fileID: 7773404612219131594, guid: e76973d151e3ba241b95e1e06ee0b4c5, type: 3}
+  - {fileID: 6241267401228686195, guid: 53cd1b0736673d940b37d063a22a552b, type: 3}
   listBuild: []
   rangeBuildEffect: 0
   resources: 0
@@ -673,7 +672,7 @@ MonoBehaviour:
     initialListenerList: []
     useDefaultListeners: 1
   isEnvironmentAware: 1
-  isStaticObject: 1
+  isStaticObject: 0
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}

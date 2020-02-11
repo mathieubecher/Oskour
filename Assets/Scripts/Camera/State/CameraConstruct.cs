@@ -10,8 +10,7 @@ public class CameraConstruct : CameraState
     }
     public override void Click()
     {
-        if(_build.colliders.Count == 0) { 
-            _build.Construct();
+        if(_build.Construct(0)) {
             controller.state = new CameraPick(controller);
         }
         else

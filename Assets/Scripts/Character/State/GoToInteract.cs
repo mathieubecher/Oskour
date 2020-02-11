@@ -4,36 +4,45 @@ using UnityEngine;
 
 public class GoToInteract : GoToState
 {
-    BuildController build;
-    CharacterController.Interact state;
+    private readonly BuildController _build;
+    private readonly CharacterController.Interact _state;
     public GoToInteract(CharacterController controller, CharacterController.Interact state, BuildController build) : base(controller,build.transform.position)
     {
         controller.stateInfo = "GoToInteract";
-        this.state = state;
-        this.build = build;
+        this._state = state;
+        this._build = build;
     }
     public override void Update()
     {
         base.Update();
-        Ray ray = new Ray(controller.transform.position,(controller.transform.localRotation * Vector3.forward).normalized * 10);
-        Debug.DrawLine(controller.transform.position, controller.transform.position + (controller.transform.localRotation * Vector3.forward).normalized *10,Color.white,Time.deltaTime);
-        if (Physics.Raycast(ray, out RaycastHit hit,10,LayerMask.GetMask("Building")))
+        Transform transform = controller.transform;
+        Vector3 position = transform.position;
+        Quaternion localRotation = transform.localRotation;
+        
+        Ray ray = new Ray(position,(localRotation * Vector3.forward).normalized * 10);
+        if (!Physics.Raycast(ray, out RaycastHit hit, 10, LayerMask.GetMask("Building"))) return;
+        if(hit.collider.transform.parent.gameObject.GetComponent<BuildController>() == _build)
         {
-            Debug.Log("trouvé");
-            if(hit.collider.transform.parent.gameObject.GetComponent<BuildController>() == build)
-            {
-                Exit();
-            }
+            Exit();
         }
     }
     public override void Exit()
     {
-        if (state == CharacterController.Interact.CONSTRUCT) controller.state = new ConstructState(controller, build);
-        else if(state == CharacterController.Interact.DESTRUCT) controller.state = new DestroyState(controller, build);
-        else build.Interact(controller);
+        switch (_state)
+        {
+            case CharacterController.Interact.CONSTRUCT:
+                controller.state = new ConstructState(controller, _build);
+                break;
+            case CharacterController.Interact.DESTRUCT:
+                controller.state = new DestroyState(controller, _build);
+                break;
+            default:
+                _build.Interact(false, controller);
+                break;
+        }
     }
     public override void Collide(BuildController build) {
-        if (build == this.build)
+        if (build == this._build)
         {
             Exit();
         }

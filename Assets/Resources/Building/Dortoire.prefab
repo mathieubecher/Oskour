@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3532823357341815496}
-  - component: {fileID: 3411809755935344441}
+  - component: {fileID: 8663567320692580523}
   - component: {fileID: 3107657278663164385}
   - component: {fileID: 7006102611846925135}
+  - component: {fileID: 2106495765218403049}
   m_Layer: 11
   m_Name: Dortoire
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3411809755935344441
+--- !u!114 &8663567320692580523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,26 +44,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2495052111917953812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953fc5e91bfbd114fae86a46aabdbf64, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f175c52bc215cb448fabe69b3128ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placing: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
-  error: {fileID: 2100000, guid: 91a2517dafd979745a8913ce2d25d87e, type: 2}
-  basic: {fileID: 2100000, guid: c64d4491f4926584a8a432d1b09ac97e, type: 2}
-  colliders: []
-  name: Dortoire
-  description: Dortoire
-  tier: 1
+  _manager: {fileID: 0}
+  name: House
+  description: House
   type: 1
-  constructValue: 0
-  interactible: 1
-  resourceType: 0
-  bonusTime: 4
-  characters: []
-  maxCharacter: 5
-  entreposable: 0
+  tier: 1
+  resourcesValue: 0
   requires: 
-  constructible: 0
+  materials: {fileID: 0}
+  resources:
+  - resource: 0
+    value: 1
 --- !u!65 &3107657278663164385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74,8 +69,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 68.91, y: 50, z: 71.1}
-  m_Center: {x: 2.6900444, y: 27.059998, z: 0}
+  m_Size: {x: 68.91, y: 10, z: 71.1}
+  m_Center: {x: 2.6900444, y: 11.43, z: 0}
 --- !u!54 &7006102611846925135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -92,6 +87,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &2106495765218403049
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495052111917953812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f2ece632e44ab7b4cb09b12687b05b38, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &5582107171252816759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103,8 +117,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 9.53, y: 9.21, z: 9.53}
-  m_Center: {x: 1.18, y: 2.39, z: -4.27}
+  m_Size: {x: 9.53, y: 0.73, z: 9.53}
+  m_Center: {x: 1.18, y: -1.66, z: -4.27}
 --- !u!208 &8937147844221891683
 NavMeshObstacle:
   m_ObjectHideFlags: 0

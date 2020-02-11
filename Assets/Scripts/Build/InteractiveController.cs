@@ -1,23 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractiveController : BuildingController
+public class InteractiveController : BuildController
 {
     
     public List<BonusResources> resources;
+    [Serializable]
     public struct BonusResources
     {
-        public ActiveBuild.Resources resource;
+        public InteractiveBuild.Resources resource;
         [Range(0,10)]
         public float value;
     }
 
-
-    public override void Interact(bool ctrl, CharacterController character)
+    
+    public override bool Interact(bool ctrl, CharacterController character)
     {
-        base.Interact(ctrl, character);
-        if(!ctrl && _state.Type == StateBuild.StateList.Active) _state.Interact(character);
+        if(!ctrl && Active()) return _state.Interact(character);
+        return base.Interact(ctrl, character);
+        
     }
     
     #region Inspector

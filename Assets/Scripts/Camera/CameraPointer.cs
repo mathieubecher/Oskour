@@ -43,8 +43,13 @@ public class CameraPointer : MonoBehaviour
             requiresToList.Remove(presentBuild.type);
         }
         if(requiresToList.Count == 0)
-        {
-            BuildController toBuild = Instantiate(build, Vector3.zero, Quaternion.identity);
+        { 
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            Vector3 pos;
+            if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit, layerMask: LayerMask.GetMask("Default"),
+                maxDistance: 1000)) pos = hit.point;
+            else pos = Vector3.zero;
+            BuildController toBuild = Instantiate(build, pos, Quaternion.identity);
             state.ConstructState(toBuild);
         }
         else

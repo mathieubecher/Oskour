@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138261337050260171}
-  - component: {fileID: 2284733697305343802}
   - component: {fileID: 2003171648951480802}
   - component: {fileID: 5897044663668341580}
   m_Layer: 11
@@ -34,36 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2284733697305343802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318458997542994711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953fc5e91bfbd114fae86a46aabdbf64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placing: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
-  error: {fileID: 2100000, guid: 91a2517dafd979745a8913ce2d25d87e, type: 2}
-  basic: {fileID: 2100000, guid: c64d4491f4926584a8a432d1b09ac97e, type: 2}
-  colliders: []
-  name: ruine
-  description: ruine
-  tier: 1
-  type: 10
-  constructValue: 0
-  interactible: 0
-  resourceType: 2
-  bonusTime: 7
-  characters: []
-  maxCharacter: 5
-  entreposable: 0
-  requires: 
-  alreadyCreate: 0
-  constructible: 0
 --- !u!65 &2003171648951480802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 96.25472, y: 50, z: 93.30075}
-  m_Center: {x: 2.6900444, y: 27.059998, z: 0}
+  m_Size: {x: 84.7, y: 22.8, z: 85.1}
+  m_Center: {x: 0.4, y: 19.2, z: 0}
 --- !u!54 &5897044663668341580
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103,10 +72,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 0
-  m_Radius: 6.5
-  m_Height: 17.6
+  m_Radius: 7.13
+  m_Height: 16.45
   m_Direction: 1
-  m_Center: {x: 0, y: 2.17, z: 0}
+  m_Center: {x: 0, y: -3.5, z: 0}
 --- !u!208 &1225165796648420558
 NavMeshObstacle:
   m_ObjectHideFlags: 0

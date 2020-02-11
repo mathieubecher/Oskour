@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892858343558801290}
   - component: {fileID: 3633444931821388088}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: modifier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3677470541708607624}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: gen_useit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,10 +94,55 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 91ce52f58afdc144fb92328ff9afd4ff, type: 2}
+    - target: {fileID: 790529884906432594, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316658966059490861, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5422165219928151121, guid: 173c6ecea34d0c7419aeb8e173b89411,
         type: 3}
       propertyPath: m_Name
       value: generateur
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422165219928151121, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617802073666039243, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708382044039379028, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112870221038086232, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183342713433289087, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956969569413867148, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803083712433486238, guid: 173c6ecea34d0c7419aeb8e173b89411,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9035416377201878594, guid: 173c6ecea34d0c7419aeb8e173b89411,
         type: 3}

@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 2516787686027988124}
   - component: {fileID: 1356915000533517569}
   - component: {fileID: 2723926883019042299}
-  - component: {fileID: 506958740843323688}
   - component: {fileID: 6115958117077178795}
   m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1356915000533517583
 Transform:
@@ -119,24 +118,8 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 4.93
   m_BaseOffset: 0
-  m_WalkableMask: 3
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
---- !u!208 &506958740843323688
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356915000533517572}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 1.87, y: 2.755, z: 1.87}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: -0.12, y: 2.31, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!54 &6115958117077178795
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -335,12 +318,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4297499055490387518}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.81
   m_Height: 5.48
   m_Direction: 1
-  m_Center: {x: 0, y: 2.21, z: 0}
+  m_Center: {x: 0, y: 2.1, z: 0}
 --- !u!1 &4688437493030723590
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 2881464026968388966, guid: 50f998a9ee0a8b24cbba54b59f771f27,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2881464026968388966, guid: 50f998a9ee0a8b24cbba54b59f771f27,
         type: 3}
@@ -653,7 +636,7 @@ PrefabInstance:
     - target: {fileID: 2881464026968388966, guid: 50f998a9ee0a8b24cbba54b59f771f27,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2881464026968388966, guid: 50f998a9ee0a8b24cbba54b59f771f27,
         type: 3}

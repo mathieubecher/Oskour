@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IddleState : State
+public class IdleState : State
 {
-   public IddleState(CharacterController controller) : base(controller)
+   public IdleState(CharacterController controller) : base(controller)
     {
-        controller.stateInfo = "Iddle";
+        controller.stateInfo = "Idle";
         controller.IA.isStopped = true;
     }
     public override void Update()
@@ -19,5 +19,5 @@ public class IddleState : State
     {
 
     }
-    public override void Iddle() {}
+    public override void Idle() {}
 }

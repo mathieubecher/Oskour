@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
+using UnityEditor.Animations;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class BuildingController : MonoBehaviour
+public class BuildController : MonoBehaviour
 {
     public enum BuildType
     {
@@ -13,12 +15,14 @@ public class BuildingController : MonoBehaviour
     }
 
     protected StateBuild _state;
-    private GameManager _manager;
+    [HideInInspector]
+    public GameManager _manager;
 
     [Header("Infos")]
     public new string name;
     public string description;
     public BuildType type;
+    public int tier = 1;
 
     [HideInInspector]
     public float resourcesValue = 0;
@@ -26,13 +30,17 @@ public class BuildingController : MonoBehaviour
     
     [Space]
     public List<BuildType> requires;
+    [HideInInspector]
+    public MaterialsGestor materials;
 
-    
+   
 
     // Start is called before the first frame update
     private void Start()
     {
+        materials = gameObject.AddComponent<MaterialsGestor>();
         _manager = FindObjectOfType<GameManager>();
+        
     }
 
     // Update is called once per frame
@@ -43,28 +51,36 @@ public class BuildingController : MonoBehaviour
 
     public void SetState(StateBuild state) { _state = state;}
 
-    public void Construct(float value) { _state.Construct(value); }
+    public bool Construct(float value) { return _state.Construct(value); }
 
-    public virtual void Interact(bool ctrl, CharacterController character)
+    public virtual bool Interact(bool ctrl, CharacterController character)
     {
-        if(ctrl) Construct(-_manager.destroySpeed);
-        else if(_state.Type == StateBuild.StateList.Construct) Construct(_manager.constructSpeed);
+        if(ctrl) return Construct(-_manager.destroySpeed / _manager.timeScale * Time.deltaTime);
+        if(_state.Type == StateBuild.StateList.Construct) return Construct(_manager.constructSpeed / _manager.timeScale * Time.deltaTime);
+        return false;
     }
+    
+    public bool Active()
+    {
+        return _state.Type == StateBuild.StateList.Active;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if(_state.Type == StateBuild.StateList.Placing)
-            ((PlacingBuild)_state).colliders.Add(other);
+            ((PlacingBuild)_state).AddCollider(other);
     }
     private void OnTriggerExit(Collider other)
     {
         if (_state.Type == StateBuild.StateList.Placing)
-            ((PlacingBuild)_state).colliders.Remove(other);
+            ((PlacingBuild)_state).RemoveCollider(other);
     }
-    
+
     // INSPECTOR
     #region Inspector
     private void Reset()
     {
+        
         Clear();
         ReOrder();
         AddAnimator();
@@ -72,9 +88,16 @@ public class BuildingController : MonoBehaviour
 
     private void Clear()
     {
-        BuildingController[] controllers = GetComponents<BuildingController>();
-        foreach(BuildingController controller in controllers) 
-            if(controller != this) DestroyImmediate(controller);
+        BuildController[] controllers = GetComponents<BuildController>();
+        foreach(BuildController controller in controllers)
+            if (controller != this)
+            {
+                this.name = controller.name;
+                this.description = controller.description;
+                this.tier = controller.tier;
+                this.requires = controller.requires;
+                DestroyImmediate(controller);
+            }
     }
 
     private void ReOrder()
@@ -82,9 +105,9 @@ public class BuildingController : MonoBehaviour
         Component[] components = GetComponents<Component>();
         int i = 0;
         while (components[i] != this) ++i;
-        while (i != 0)
+        while (i != 1)
         {
-            if (i > 0)
+            if (i > 1)
             {
                 UnityEditorInternal.ComponentUtility.MoveComponentUp(this);
                 --i;
@@ -109,9 +132,12 @@ public class BuildingController : MonoBehaviour
         return animator != null;
     }
 
-    protected UnityEditor.Animations.AnimatorController GetAnimatorController(string path)
+    protected RuntimeAnimatorController GetAnimatorController(string path)
     {
-        return UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath("Assets/Resources/BuildState/"+path);
+        if(Resources.Load<UnityEditor.Animations.AnimatorController>(path) != null)
+            return  (AnimatorController)Resources.Load<UnityEditor.Animations.AnimatorController>(path);
+        
+        return Resources.Load<RuntimeAnimatorController>(path);
     }
     #endregion
 }
