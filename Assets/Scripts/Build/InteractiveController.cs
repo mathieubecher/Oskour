@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InteractiveController : BuildController
 {
-    
+    public bool storable;
     public List<BonusResources> resources;
     [Serializable]
     public struct BonusResources

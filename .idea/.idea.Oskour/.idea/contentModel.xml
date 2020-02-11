@@ -11,14 +11,17 @@
           <e p="Build" t="Include">
             <e p="BuildController.cs" t="Include" />
             <e p="InteractiveController.cs" t="Include" />
+            <e p="MaterialsGestor.cs" t="Include" />
+            <e p="RuinController.cs" t="Include" />
             <e p="State" t="Include">
-              <e p="MaterialsGestor.cs" t="Include" />
-              <e p="Script" t="Include">
-                <e p="ActiveBuild.cs" t="Include" />
-                <e p="ConstructBuild.cs" t="Include" />
-                <e p="InteractiveBuild.cs" t="Include" />
-                <e p="PlacingBuild.cs" t="Include" />
-                <e p="StateBuild.cs" t="Include" />
+              <e p="Resources" t="Include">
+                <e p="Script" t="Include">
+                  <e p="ActiveBuild.cs" t="Include" />
+                  <e p="ConstructBuild.cs" t="Include" />
+                  <e p="InteractiveBuild.cs" t="Include" />
+                  <e p="PlacingBuild.cs" t="Include" />
+                  <e p="StateBuild.cs" t="Include" />
+                </e>
               </e>
             </e>
           </e>

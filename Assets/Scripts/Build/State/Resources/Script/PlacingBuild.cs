@@ -38,11 +38,8 @@ public class PlacingBuild : StateBuild
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //build.transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
-        build.transform.GetChild(0).GetComponent<Collider>().enabled = true;
-        Destroy(build.GetComponent<Rigidbody>());
-        type = StateBuild.StateList.Construct;
-        build.gameObject.layer = 10;
+       
+        build.ActivateBuild();
         
     }
 

@@ -55,6 +55,7 @@ MonoBehaviour:
   resourcesValue: 0
   requires: 
   materials: {fileID: 0}
+  storable: 1
   resources:
   - resource: 2
     value: 7

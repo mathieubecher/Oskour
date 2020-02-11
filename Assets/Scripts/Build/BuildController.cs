@@ -36,13 +36,20 @@ public class BuildController : MonoBehaviour
    
 
     // Start is called before the first frame update
-    private void Start()
+    protected virtual void Awake()
     {
         materials = gameObject.AddComponent<MaterialsGestor>();
         _manager = FindObjectOfType<GameManager>();
         
     }
 
+    public void ActivateBuild()
+    {
+        //build.transform.GetChild(0).GetComponent<NavMeshObstacle>().enabled = true;
+        transform.GetChild(0).GetComponent<Collider>().enabled = true;
+        Destroy(GetComponent<Rigidbody>());
+        gameObject.layer = 10;
+    }
     // Update is called once per frame
     private void Update()
     {
@@ -56,8 +63,7 @@ public class BuildController : MonoBehaviour
     public virtual bool Interact(bool ctrl, CharacterController character)
     {
         if(ctrl) return Construct(-_manager.destroySpeed / _manager.timeScale * Time.deltaTime);
-        if(_state.Type == StateBuild.StateList.Construct) return Construct(_manager.constructSpeed / _manager.timeScale * Time.deltaTime);
-        return false;
+        return _state.Type == StateBuild.StateList.Construct && Construct(_manager.constructSpeed / _manager.timeScale * Time.deltaTime);
     }
     
     public bool Active()
@@ -65,12 +71,12 @@ public class BuildController : MonoBehaviour
         return _state.Type == StateBuild.StateList.Active;
     }
     
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(_state.Type == StateBuild.StateList.Placing)
             ((PlacingBuild)_state).AddCollider(other);
     }
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (_state.Type == StateBuild.StateList.Placing)
             ((PlacingBuild)_state).RemoveCollider(other);

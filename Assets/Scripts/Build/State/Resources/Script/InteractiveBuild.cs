@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,6 @@ public class InteractiveBuild : ActiveBuild
     
     public override bool Interact(CharacterController character)
     {
-        Debug.Log("interact");
         if (!characters.Find(c => c == character))
         {
             characters.Add(character);
@@ -27,6 +27,7 @@ public class InteractiveBuild : ActiveBuild
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator,stateInfo,layerIndex);
+        type = StateList.Active;
         characters = new List<CharacterController>();
     }
 
@@ -38,20 +39,51 @@ public class InteractiveBuild : ActiveBuild
         {
             if (characters[i].Select)
             {
-                characters[i].gameObject.SetActive(true);
-                characters[i].state.Idle();
-                characters.Remove(characters[i]);
+                LeaveBuild(characters[i]);
             }
-            else ++i;
+            else
+            {
+                bool end = true;
+                foreach (InteractiveController.BonusResources resource in ((InteractiveController)build).resources)
+                {
+                    switch (resource.resource)
+                    {
+                        case Resources.Energy:
+                            end &= characters[i].energy >= 1;
+                            
+                            break;
+                        case Resources.Food :
+                            end &= characters[i].food >= 1;
+                            break;
+                        case Resources.Oxygen:
+                            end &= characters[i].oxygen >= 1;
+                            
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+                ++i;
+            }
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateExit(animator,stateInfo,layerIndex);
+        while(characters.Count > 0)
+        {
+            LeaveBuild(characters[0]);
+        }
+    }
 
+    private void LeaveBuild(CharacterController character)
+    {
+        character.gameObject.SetActive(true);
+        character.state.Idle();
+        characters.Remove(character);
+    }
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{

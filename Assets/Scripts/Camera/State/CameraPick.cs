@@ -12,7 +12,7 @@ public class CameraPick : CameraState
     {
         Ray ray = controller.mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray: ray,hitInfo: out RaycastHit hit, layerMask: LayerMask.GetMask("Character"), maxDistance: 1000))
+        if (Physics.Raycast(ray: ray,hitInfo: out RaycastHit hit, layerMask: LayerMask.GetMask("Character"), maxDistance: 1000) && hit.collider.gameObject.activeSelf)
         {
             if (!Input.GetKey(KeyCode.LeftShift)) controller.manager.ResetSelect();
             Debug.Log(hit.collider.gameObject.layer);
@@ -77,7 +77,7 @@ public class CameraPick : CameraState
             Mathf.Abs(_startSelectionDrag.y - Input.mousePosition.y));
         foreach (CharacterController character in controller.manager.Characters)
         {
-            if (selectionBox.Contains(controller.mainCamera.WorldToScreenPoint(character.transform.position)))
+            if (character.gameObject.activeSelf && selectionBox.Contains(controller.mainCamera.WorldToScreenPoint(character.transform.position)))
             {
                 controller.manager.Select(character);
             }
