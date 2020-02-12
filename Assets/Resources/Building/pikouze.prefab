@@ -52,7 +52,7 @@ MonoBehaviour:
   description: Infirmary
   type: 8
   tier: 2
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 0900000003000000
   materials: {fileID: 0}
   storable: 1

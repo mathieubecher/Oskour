@@ -13,7 +13,7 @@ public class ActiveBuild : StateBuild
     {
         base.OnStateEnter(animator,stateInfo,layerIndex);
         type = StateList.Active;
-        build._manager.listBuild.Add(build);
+        
         build.materials.ResetMaterial();
     }
 
@@ -26,7 +26,6 @@ public class ActiveBuild : StateBuild
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        build._manager.listBuild.Remove(build);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

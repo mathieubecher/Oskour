@@ -36,25 +36,33 @@ public class CameraPointer : MonoBehaviour
 
     public void PlaceBuilding(BuildController build)
     {
-        var requiresToList = build.requires.ToList();
-
-        foreach (BuildController presentBuild in manager.listBuild)
+        if (manager.resources > 0)
         {
-            requiresToList.Remove(presentBuild.type);
-        }
-        if(requiresToList.Count == 0)
-        { 
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            Vector3 pos;
-            if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit, layerMask: LayerMask.GetMask("Default"),
-                maxDistance: 1000)) pos = hit.point;
-            else pos = Vector3.zero;
-            BuildController toBuild = Instantiate(build, pos, Quaternion.identity);
-            state.ConstructState(toBuild);
+            List<BuildController.BuildType> requiresToList = build.requires.ToList();
+
+            foreach (BuildController presentBuild in manager.listBuild)
+            {
+                if(presentBuild.Active()) requiresToList.Remove(presentBuild.type);
+            }
+
+            if (requiresToList.Count == 0)
+            {
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                Vector3 pos;
+                if (Physics.Raycast(ray: ray, hitInfo: out RaycastHit hit, layerMask: LayerMask.GetMask("Default"),
+                    maxDistance: 1000)) pos = hit.point;
+                else pos = Vector3.zero;
+                BuildController toBuild = Instantiate(build, pos, Quaternion.identity);
+                state.ConstructState(toBuild);
+            }
+            else
+            {
+                //TODO Feedback build require
+            }
         }
         else
         {
-            //TODO Feedback
+            //TODO Feedback no resources
         }
     }
 

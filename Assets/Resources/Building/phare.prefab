@@ -52,7 +52,7 @@ MonoBehaviour:
   description: Light
   type: 5
   tier: 2
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 09000000
   materials: {fileID: 0}
 --- !u!65 &2003171648951480802

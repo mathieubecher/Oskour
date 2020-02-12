@@ -50,7 +50,6 @@ public class InteractiveBuild : ActiveBuild
                     {
                         case Resources.Energy:
                             end &= characters[i].energy >= 1;
-                            
                             break;
                         case Resources.Food :
                             end &= characters[i].food >= 1;

@@ -52,7 +52,7 @@ MonoBehaviour:
   description: Ruin
   type: 10
   tier: 0
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 
   materials: {fileID: 0}
 --- !u!65 &2003171648951480802

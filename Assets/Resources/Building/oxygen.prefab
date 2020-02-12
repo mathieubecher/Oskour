@@ -52,9 +52,10 @@ MonoBehaviour:
   description: Oxygenator
   type: 4
   tier: 2
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 09000000
   materials: {fileID: 0}
+  storable: 0
   resources:
   - resource: 0
     value: 7

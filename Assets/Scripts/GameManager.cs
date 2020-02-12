@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -23,7 +24,10 @@ public class GameManager : MonoBehaviour
     public List<BuildController> listBuild;
     [Range(0, 100)]
     public float rangeBuildEffect;
-    public int resources = 0;
+
+    public int maxResources = 5;
+    public float resources;
+
     public float destroySpeed = 0.3f;
     public float constructSpeed = 0.3f;
 
@@ -71,9 +75,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
-    public void PlaceBuilding(BuildController build)
+
+    public float GetResources()
     {
-        _pointer.PlaceBuilding(build);
+        resources = maxResources;
+        foreach (BuildController actualBuild in listBuild)
+        {
+            resources -= actualBuild.Progress();
+        }
+
+        return resources;
+    }
+    public void PlaceBuilding(BuildController actualBuild)
+    {
+        if(resources > 0)
+            _pointer.PlaceBuilding(actualBuild);
     }
 }

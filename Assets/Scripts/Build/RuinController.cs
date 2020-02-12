@@ -9,7 +9,8 @@ public class RuinController : BuildController
     {
         base.Awake();
         ActivateBuild();
-        GetComponent<Animator>().SetFloat("progress", 1);
+        GetComponent<Animator>().SetFloat(ProgressBuild, 1);
+        _manager.listBuild.Add(this);
     }
 
     // Update is called once per frame

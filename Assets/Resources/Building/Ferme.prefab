@@ -52,7 +52,7 @@ MonoBehaviour:
   description: Farm
   type: 0
   tier: 1
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 
   materials: {fileID: 0}
   storable: 1

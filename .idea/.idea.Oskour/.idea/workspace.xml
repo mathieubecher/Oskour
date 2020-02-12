@@ -28,13 +28,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraConstruct.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Temp/GeneratedFromGraph-testSand-UnlitMaster-c940d79d-7d8e-454e-adee-5c1beb6ff52f.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraPick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/ConstructState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/State.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/DestroyState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Temp/Compiled-Hidden-EdgeDetectColors.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/GoToState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/IdleState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/GoToInteract.cs" root0="FORCE_HIGHLIGHTING" />
@@ -60,7 +58,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/State/DestroyState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/State/ConstructState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Script/InteractiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/State/GoToState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/State/GoToInteract.cs" />
@@ -70,15 +67,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Script/PlacingBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Script/ConstructBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Script/ActiveBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/MaterialsGestor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/RuinController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/PlacingBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraPick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/InteractiveBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/StateBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/RuinController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/PlacingBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
       </list>
     </option>
   </component>
@@ -131,7 +132,7 @@
       <updated>1581330324078</updated>
       <workItem from="1581330327286" duration="22863000" />
       <workItem from="1581358924156" duration="27539000" />
-      <workItem from="1581427200211" duration="11271000" />
+      <workItem from="1581427200211" duration="24442000" />
     </task>
     <servers />
   </component>

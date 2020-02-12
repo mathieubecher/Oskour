@@ -15,6 +15,7 @@ public class BuildController : MonoBehaviour
     }
 
     protected StateBuild _state;
+    protected Animator _animator;
     [HideInInspector]
     public GameManager _manager;
 
@@ -24,21 +25,21 @@ public class BuildController : MonoBehaviour
     public BuildType type;
     public int tier = 1;
 
-    [HideInInspector]
-    public float resourcesValue = 0;
-    public readonly float resourcesScore = 0;
+    public double resourcesValue = 1;
     
     [Space]
     public List<BuildType> requires;
     [HideInInspector]
     public MaterialsGestor materials;
 
-   
+    public static readonly int ProgressBuild = Animator.StringToHash("progress");
+
 
     // Start is called before the first frame update
     protected virtual void Awake()
     {
         materials = gameObject.AddComponent<MaterialsGestor>();
+        _animator = gameObject.GetComponent<Animator>();
         _manager = FindObjectOfType<GameManager>();
         
     }
@@ -62,13 +63,18 @@ public class BuildController : MonoBehaviour
 
     public virtual bool Interact(bool ctrl, CharacterController character)
     {
-        if(ctrl) return Construct(-_manager.destroySpeed / _manager.timeScale * Time.deltaTime);
-        return _state.Type == StateBuild.StateList.Construct && Construct(_manager.constructSpeed / _manager.timeScale * Time.deltaTime);
+        if(ctrl) return Construct(-Time.deltaTime * _manager.constructSpeed / 10f);
+        return _state.Type == StateBuild.StateList.Construct && Construct(Time.deltaTime * _manager.destroySpeed / 10f);
     }
     
     public bool Active()
     {
         return _state.Type == StateBuild.StateList.Active;
+    }
+
+    public float Progress()
+    {
+        return _animator.GetFloat(ProgressBuild);
     }
     
     protected virtual void OnTriggerEnter(Collider other)
@@ -81,7 +87,7 @@ public class BuildController : MonoBehaviour
         if (_state.Type == StateBuild.StateList.Placing)
             ((PlacingBuild)_state).RemoveCollider(other);
     }
-
+    
     // INSPECTOR
     #region Inspector
     private void Reset()
@@ -146,4 +152,6 @@ public class BuildController : MonoBehaviour
         return Resources.Load<RuntimeAnimatorController>(path);
     }
     #endregion
+
+
 }

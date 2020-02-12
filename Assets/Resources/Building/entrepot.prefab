@@ -52,9 +52,10 @@ MonoBehaviour:
   description: Repository
   type: 2
   tier: 1
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 
   materials: {fileID: 0}
+  storable: 0
   resources: []
 --- !u!65 &2003171648951480802
 BoxCollider:

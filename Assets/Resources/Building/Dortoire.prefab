@@ -52,9 +52,10 @@ MonoBehaviour:
   description: House
   type: 1
   tier: 1
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 
   materials: {fileID: 0}
+  storable: 0
   resources:
   - resource: 0
     value: 1

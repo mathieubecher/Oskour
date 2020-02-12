@@ -81,7 +81,7 @@ MonoBehaviour:
   description: Turbine
   type: 9
   tier: 2
-  resourcesValue: 0
+  resourcesValue: 1
   requires: 0300000003000000
   materials: {fileID: 0}
 --- !u!65 &2003171648951480802

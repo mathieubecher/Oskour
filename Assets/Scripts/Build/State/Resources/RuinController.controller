@@ -8,9 +8,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: progress
-    m_EventTreshold: 1
+  - m_ConditionMode: 6
+    m_ConditionEvent: Progress
+    m_EventTreshold: 7200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3886909272318112723}
   m_Solo: 0
@@ -83,6 +83,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Construct
     m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Progress
+    m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
