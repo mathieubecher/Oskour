@@ -279,7 +279,7 @@ Material:
     - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _progress: 11
+    - _progress: 0
     - _sizeworld: 0.1
     - progress: 0
     - sizeworld: 0.05
