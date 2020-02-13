@@ -80,6 +80,7 @@
             </e>
           </e>
         </e>
+        <e p="StorageBuild.cs" t="Include" />
         <e p="StreamingAssets" t="Include">
           <e p="Audio" t="Include">
             <e p="GeneratedSoundBanks" t="Include">

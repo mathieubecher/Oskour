@@ -36,6 +36,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/GoToState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/IdleState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/State/GoToInteract.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/StorageBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/RuinController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -68,18 +69,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Script/ConstructBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Script/ActiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/MaterialsGestor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraPick.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/InteractiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/StateBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/RuinController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/PlacingBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
+        <option value="$PROJECT_DIR$/Assets/StorageBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/InteractiveBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
       </list>
     </option>
   </component>
@@ -112,10 +114,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="9808">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="11576">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9808" />
+      <option name="pid" value="11576" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -132,7 +134,9 @@
       <updated>1581330324078</updated>
       <workItem from="1581330327286" duration="22863000" />
       <workItem from="1581358924156" duration="27539000" />
-      <workItem from="1581427200211" duration="24442000" />
+      <workItem from="1581427200211" duration="25894000" />
+      <workItem from="1581503009903" duration="10908000" />
+      <workItem from="1581541929185" duration="13843000" />
     </task>
     <servers />
   </component>

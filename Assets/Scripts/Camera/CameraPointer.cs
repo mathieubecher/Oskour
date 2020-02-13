@@ -39,10 +39,11 @@ public class CameraPointer : MonoBehaviour
         if (manager.resources > 0)
         {
             List<BuildController.BuildType> requiresToList = build.requires.ToList();
-
+            //Debug.Log(requiresToList.ToString());
             foreach (BuildController presentBuild in manager.listBuild)
             {
                 if(presentBuild.Active()) requiresToList.Remove(presentBuild.type);
+                //Debug.Log(requiresToList.Count + " "+ presentBuild.type);
             }
 
             if (requiresToList.Count == 0)

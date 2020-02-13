@@ -25,18 +25,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!114 &-5039449540118243340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3855aa5f5f05a4fb7dff9b3ea25cdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1107 &-2347183374346886423
 AnimatorStateMachine:
   serializedVersion: 5
@@ -51,7 +39,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5981861237853944603}
-    m_Position: {x: 780, y: -10, z: 0}
+    m_Position: {x: 670, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1857626874068308867}
     m_Position: {x: 310, y: 90, z: 0}
@@ -135,19 +123,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Construct
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Progress
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -212,7 +200,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -7151801315570303657}
   m_StateMachineBehaviours:
-  - {fileID: -5039449540118243340}
+  - {fileID: 6316825092609301608}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -227,6 +215,18 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &6316825092609301608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf0072ed3e6d6443859421c799a8438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7382127976118567597
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,8 +250,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: Progress
+  - m_ConditionMode: 1
+    m_ConditionEvent: Construct
     m_EventTreshold: 7200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5981861237853944603}

@@ -55,7 +55,7 @@ MonoBehaviour:
   food: 1
   oxygen: 1
   energy: 1
-  beginTimer: 60
+  beginTimer: 10
   plane: {fileID: 1907073935899034327}
   selected: {fileID: 2100000, guid: 94b5ba7138f725a48b5e9c452807d934, type: 2}
   unselect: {fileID: 2100000, guid: 1b8739cc275d2004aa937c2fdad2ffba, type: 2}

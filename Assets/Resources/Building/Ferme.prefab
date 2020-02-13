@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138261337050260171}
-  - component: {fileID: 3425535643422752898}
+  - component: {fileID: 1716419508158508162}
   - component: {fileID: 2003171648951480802}
   - component: {fileID: 5897044663668341580}
   - component: {fileID: 8290915824413266188}
+  - component: {fileID: 3234151909133393232}
   m_Layer: 11
   m_Name: Ferme
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3425535643422752898
+--- !u!114 &1716419508158508162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,17 +49,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
+  constructMaterial: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   name: Farm
   description: Farm
   type: 0
   tier: 1
   resourcesValue: 1
   requires: 
-  materials: {fileID: 0}
-  storable: 1
+  materials: {fileID: 3234151909133393232}
+  storable: 0
   resources:
-  - resource: 2
+  - resource: 0
     value: 7
+  maxCharacter: 5
 --- !u!65 &2003171648951480802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 1318458997542994711}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: f2ece632e44ab7b4cb09b12687b05b38, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6b9f862eb0620294bb963a366a6437b3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,6 +110,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3234151909133393232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318458997542994711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17e853b3b5246f0bb6ca2103c88d213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
 --- !u!136 &8696523032877319494
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -195,7 +211,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: a9749b645d7477e40af60049f7c58be7, type: 3}
+  - {fileID: 2100000, guid: 8eb0a5d4988bf4541aed5081bbdedaab, type: 2}
+  - {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,6 +385,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7390725178102401535, guid: dca24034462731040a9c2e787914d367,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390725178102401535, guid: dca24034462731040a9c2e787914d367,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00329415c60348c4aa2ac10f0e73b292, type: 2}
+    - target: {fileID: 7390725178102401535, guid: dca24034462731040a9c2e787914d367,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
     - target: {fileID: 9030761956237707488, guid: dca24034462731040a9c2e787914d367,
         type: 3}
       propertyPath: m_Layer

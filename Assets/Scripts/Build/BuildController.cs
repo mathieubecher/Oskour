@@ -15,10 +15,25 @@ public class BuildController : MonoBehaviour
     }
 
     protected StateBuild _state;
+    public StateBuild State
+    {
+        get => _state;
+    }
     protected Animator _animator;
     [HideInInspector]
     public GameManager _manager;
 
+
+    [ContextMenu("Prepare shader")]
+    void ConstructShader()
+    {
+        
+        if(TryGetComponent<MaterialsGestor>(out materials)) DestroyImmediate(materials);
+
+        materials = gameObject.AddComponent<MaterialsGestor>();
+    }
+
+    
     [Header("Infos")]
     public new string name;
     public string description;
@@ -38,9 +53,10 @@ public class BuildController : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Awake()
     {
-        materials = gameObject.AddComponent<MaterialsGestor>();
+        
         _animator = gameObject.GetComponent<Animator>();
         _manager = FindObjectOfType<GameManager>();
+        
         
     }
 
@@ -96,6 +112,7 @@ public class BuildController : MonoBehaviour
         Clear();
         ReOrder();
         AddAnimator();
+        ConstructShader();
     }
 
     private void Clear()
@@ -106,6 +123,7 @@ public class BuildController : MonoBehaviour
             {
                 this.name = controller.name;
                 this.description = controller.description;
+                this.type = controller.type;
                 this.tier = controller.tier;
                 this.requires = controller.requires;
                 DestroyImmediate(controller);

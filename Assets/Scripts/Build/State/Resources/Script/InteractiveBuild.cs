@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InteractiveBuild : ActiveBuild
 {
-    private List<CharacterController> characters;
+    protected List<CharacterController> characters;
     public enum Resources
     {
         Energy, Oxygen, Food
@@ -17,12 +17,14 @@ public class InteractiveBuild : ActiveBuild
         {
             characters.Add(character);
             character.gameObject.SetActive(false);
+            character.enabled = false;
             build._manager.UnSelect(character);
         }
         else return false;
         return true;
     }
     
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -43,28 +45,80 @@ public class InteractiveBuild : ActiveBuild
             }
             else
             {
-                bool end = true;
-                foreach (InteractiveController.BonusResources resource in ((InteractiveController)build).resources)
-                {
-                    switch (resource.resource)
-                    {
-                        case Resources.Energy:
-                            end &= characters[i].energy >= 1;
-                            break;
-                        case Resources.Food :
-                            end &= characters[i].food >= 1;
-                            break;
-                        case Resources.Oxygen:
-                            end &= characters[i].oxygen >= 1;
-                            
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                }
-                ++i;
+                if(CharacterAction(characters[i])) LeaveBuild(characters[i]);
+                else ++i;
             }
         }
+
+        int countChar = characters.Count;
+        
+        if (countChar < ((InteractiveController) build).maxCharacter && ((InteractiveController) build).storable)
+        {
+            List<StorageBuild> repositories = new List<StorageBuild>();
+            foreach (BuildController otherBuild in build._manager.listBuild)
+            {
+                if (otherBuild.type == BuildController.BuildType.Repository && otherBuild.Active())
+                {
+                    repositories.Add((StorageBuild)otherBuild.State);  
+                }
+            }
+
+            if (repositories.Count > 0)
+            {
+                float incrValue = (1-(countChar / (float)((InteractiveController) build).maxCharacter)) / (float)repositories.Count;
+                Debug.Log(incrValue);
+                foreach (StorageBuild repository in repositories)
+                {
+                    foreach (InteractiveController.BonusResources resource in ((InteractiveController) build).resources)
+                    {
+                        switch (resource.resource)
+                        {
+                            case Resources.Energy:
+                                repository.storeCoffee = Mathf.Min(repository.maxCoffee,repository.storeCoffee + Time.deltaTime * resource.value * incrValue);
+                                break;
+                            case Resources.Food:
+                                repository.storeFood = Mathf.Min(repository.maxFood,repository.storeFood + Time.deltaTime * resource.value * incrValue);
+                                break;
+                        }
+                    }
+                }
+                
+            }
+        }
+            
+    }
+
+    protected virtual bool CharacterAction(CharacterController character)
+    {
+        bool end = true;
+
+        float repartCharacter = ((((InteractiveController) build).storable) ? 1:(((InteractiveController) build).maxCharacter-characters.Count)) / (float)((InteractiveController) build).maxCharacter;
+        Debug.Log("repart : " + repartCharacter);
+        foreach (InteractiveController.BonusResources resource in ((InteractiveController)build).resources)
+        {
+            float incrValue = Time.deltaTime * resource.value * repartCharacter / build._manager.timeScale;
+            Debug.Log("incr : " + incrValue);
+            switch (resource.resource)
+            {
+                case Resources.Energy:
+                    character.energy = Mathf.Min(1,character.energy + incrValue);
+                    end &= character.energy >= 1;
+                    break;
+                case Resources.Food :
+                    character.food = Mathf.Min(1,character.food + incrValue);
+                    end &= character.food >= 1;
+                    break;
+                case Resources.Oxygen:
+                    character.oxygen = Mathf.Min(1,character.oxygen + incrValue);
+                    end &= character.oxygen >= 1;
+                            
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        return end;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -81,6 +135,7 @@ public class InteractiveBuild : ActiveBuild
     {
         character.gameObject.SetActive(true);
         character.state.Idle();
+        character.enabled = true;
         characters.Remove(character);
     }
     // OnStateMove is called right after Animator.OnAnimatorMove()

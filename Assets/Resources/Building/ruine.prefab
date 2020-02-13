@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138261337050260171}
-  - component: {fileID: 6654712265859736694}
+  - component: {fileID: 9160404706369007292}
   - component: {fileID: 2003171648951480802}
   - component: {fileID: 5897044663668341580}
   - component: {fileID: 6959256788142874749}
+  - component: {fileID: 7252704627527527007}
   m_Layer: 11
   m_Name: ruine
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6654712265859736694
+--- !u!114 &9160404706369007292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,13 +49,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
+  constructMaterial: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   name: Ruin
   description: Ruin
   type: 10
   tier: 0
   resourcesValue: 1
   requires: 
-  materials: {fileID: 0}
+  materials: {fileID: 7252704627527527007}
 --- !u!65 &2003171648951480802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103,6 +105,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7252704627527527007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318458997542994711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17e853b3b5246f0bb6ca2103c88d213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
 --- !u!136 &8696523032877319494
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -285,6 +300,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7390725178102401535, guid: dca24034462731040a9c2e787914d367,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390725178102401535, guid: dca24034462731040a9c2e787914d367,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00329415c60348c4aa2ac10f0e73b292, type: 2}
+    - target: {fileID: 7390725178102401535, guid: dca24034462731040a9c2e787914d367,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
     - target: {fileID: 9030761956237707488, guid: dca24034462731040a9c2e787914d367,
         type: 3}
       propertyPath: m_Layer

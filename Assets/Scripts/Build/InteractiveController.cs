@@ -7,6 +7,7 @@ public class InteractiveController : BuildController
 {
     public bool storable;
     public List<BonusResources> resources;
+    public int maxCharacter = 5;
     [Serializable]
     public struct BonusResources
     {

@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3532823357341815496}
-  - component: {fileID: 8663567320692580523}
+  - component: {fileID: 806172229036067868}
   - component: {fileID: 3107657278663164385}
   - component: {fileID: 7006102611846925135}
   - component: {fileID: 2106495765218403049}
+  - component: {fileID: 1890608380429835299}
   m_Layer: 11
   m_Name: Dortoire
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8663567320692580523
+--- !u!114 &806172229036067868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,17 +49,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
+  constructMaterial: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   name: House
   description: House
   type: 1
   tier: 1
   resourcesValue: 1
   requires: 
-  materials: {fileID: 0}
+  materials: {fileID: 1890608380429835299}
   storable: 0
   resources:
   - resource: 0
-    value: 1
+    value: 4
+  maxCharacter: 2
 --- !u!65 &3107657278663164385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 2495052111917953812}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: f2ece632e44ab7b4cb09b12687b05b38, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6b9f862eb0620294bb963a366a6437b3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,6 +110,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1890608380429835299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495052111917953812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17e853b3b5246f0bb6ca2103c88d213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
 --- !u!65 &5582107171252816759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -260,14 +276,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6322708623743785007, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
-      propertyPath: m_CastShadows
-      value: 1
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6322708623743785007, guid: 2845a05a73e40784a984369e1ffabf7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edd143136539a224094267ec6f7bf270, type: 2}
+    - target: {fileID: 6322708623743785007, guid: 2845a05a73e40784a984369e1ffabf7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
+    - target: {fileID: 7272335596130988508, guid: 2845a05a73e40784a984369e1ffabf7c,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7272335596130988508, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
-      propertyPath: m_CastShadows
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edd143136539a224094267ec6f7bf270, type: 2}
+    - target: {fileID: 7272335596130988508, guid: 2845a05a73e40784a984369e1ffabf7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
     - target: {fileID: 7907487607426909285, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
       propertyPath: m_Layer
@@ -275,9 +311,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926006130757463250, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
-      propertyPath: m_CastShadows
-      value: 1
+      propertyPath: m_Materials.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7926006130757463250, guid: 2845a05a73e40784a984369e1ffabf7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8eb0a5d4988bf4541aed5081bbdedaab, type: 2}
+    - target: {fileID: 7926006130757463250, guid: 2845a05a73e40784a984369e1ffabf7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
     - target: {fileID: 8057039862205807703, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
       propertyPath: m_Layer
@@ -285,19 +331,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8464937830993275784, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8464937830993275784, guid: 2845a05a73e40784a984369e1ffabf7c,
-        type: 3}
-      propertyPath: m_CastShadows
-      value: 1
+      propertyPath: m_Materials.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8464937830993275784, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dfeb5ffe83623e0409151f890be58c88, type: 2}
+      objectReference: {fileID: 2100000, guid: 1f6c3e64207b7064b9b5ccb5eeeccd3c, type: 2}
+    - target: {fileID: 8464937830993275784, guid: 2845a05a73e40784a984369e1ffabf7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
     - target: {fileID: 8496885703454251950, guid: 2845a05a73e40784a984369e1ffabf7c,
         type: 3}
       propertyPath: m_Layer

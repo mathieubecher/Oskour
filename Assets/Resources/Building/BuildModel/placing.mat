@@ -148,9 +148,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_197C8084: 1.79
-    - Vector1_1E4B3843: 0.05
+    - Vector1_1E4B3843: 70.33
+    - Vector1_2D6FC8DB: 0
     - Vector1_43F180FD: 0
+    - Vector1_44411787: 0
     - Vector1_5CFAA014: 0.1
+    - Vector1_61183576: 4.6
     - Vector1_DB6293F: 1.35
     - _AORemapMax: 1
     - _AORemapMin: 0
@@ -276,6 +279,10 @@ Material:
     - _ZTestModeDistortion: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
+    - _progress: 11
+    - _sizeworld: 0.1
+    - progress: 0
+    - sizeworld: 0.05
     m_Colors:
     - Color_A28F8A0B: {r: 0.28627446, g: 0.32941175, b: 0.5647059, a: 1}
     - Color_AF3777B8: {r: 0.5176471, g: 3.890196, b: 4, a: 1}
@@ -300,3 +307,4 @@ Material:
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _UnlitColor: {r: 1, g: 1, b: 1, a: 0.45490196}
+    - _color: {r: 0.8020957, g: 2.673652, b: 2.455304, a: 1}

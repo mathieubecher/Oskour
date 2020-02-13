@@ -16,13 +16,15 @@ public class ConstructBuild : StateBuild
         if(_animator.GetFloat(Progress)  >= 1)_animator.SetFloat(Progress, 1);
         else if(_animator.GetFloat(Progress)  <= 0) _animator.SetFloat(Progress, 0);
         
-        build.materials.SetMaterial(construct);
+                
+        build.materials.ResetMaterial();
+        build.materials.SetProgress(animator.GetFloat(Progress));
     }
     
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        build.materials.SetProgress(animator.GetFloat(Progress));
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
