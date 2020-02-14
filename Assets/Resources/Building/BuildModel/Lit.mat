@@ -96,6 +96,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3D3ED092_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 586725e2a7ae00d4da7ecf348c62865c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_56728039_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f916dfc2dd5ae5a4aa598d68083f69af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecularColorMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -125,6 +133,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_5495314F: 5
+    - Vector1_FDA759D3: 0.1
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -246,6 +256,7 @@ Material:
     - _ZTestModeDistortion: 8
     - _ZTestTransparent: 4
     - _ZWrite: 1
+    - _planProgress: 1
     - _progress: 0
     - progress: 1000
     m_Colors:

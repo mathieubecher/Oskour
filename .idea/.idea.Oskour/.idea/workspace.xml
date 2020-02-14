@@ -81,6 +81,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Includes/MainLightNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Includes/CustomLighting.hlsl" />
       </list>
     </option>
   </component>
