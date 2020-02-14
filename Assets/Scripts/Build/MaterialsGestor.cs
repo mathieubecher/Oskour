@@ -119,12 +119,13 @@ public class MaterialsGestor : MonoBehaviour
             int j = 0;
             while (j < childRenderer.sharedMaterials.Length && !defaultLit)
             {
-                defaultLit |= childRenderer.sharedMaterials[j].shader.name == "HDRP/Lit";
+                string shaderName = childRenderer.sharedMaterials[j].shader.name;
+                defaultLit |= shaderName == "HDRP/Lit" || shaderName == "Shader Graphs/Lit" ;
                 ++j;
             }
             if(defaultLit){
-                Material[] mats = new Material[childRenderer.sharedMaterials.Length+1];
-                for (int i = 0; i < childRenderer.sharedMaterials.Length; ++i)
+                Material[] mats = new Material[childRenderer.sharedMaterials.Length-1];
+                for (int i = 0; i < mats.Length; ++i)
                 {
                     if (childRenderer.sharedMaterials[i].shader.name == "HDRP/Lit"){
                         Material mat = AssetDatabase.LoadAssetAtPath<Material>("Assets/material/Construct/"+ childRenderer.sharedMaterials[i].name +"_Lit.mat");
@@ -145,7 +146,6 @@ public class MaterialsGestor : MonoBehaviour
                         mats[i] = childRenderer.sharedMaterials[i];
                     }
                 }
-                mats[mats.Length - 1] = construct;
                 childRenderer.sharedMaterials = mats;
             }
             //_materials.Add(new MaterialGestor(childRenderer, childRenderer.sharedMaterials));

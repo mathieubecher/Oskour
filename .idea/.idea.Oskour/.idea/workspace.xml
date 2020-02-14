@@ -19,7 +19,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScript/ButonBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/PlacingBuild.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@7.1.8/Editor/Drawing/Manipulators/WindowDraggable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/InteractiveBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScript/Destroy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" root0="FORCE_HIGHLIGHTING" />
@@ -80,8 +79,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/InteractiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
       </list>
     </option>
   </component>
