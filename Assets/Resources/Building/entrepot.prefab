@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
-  constructMaterial: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   name: Repository
   description: Repository
   type: 2
   tier: 1
   resourcesValue: 1
+  height: 65
   requires: 
   materials: {fileID: 6596166373173732592}
   storable: 0
@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17e853b3b5246f0bb6ca2103c88d213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
 --- !u!65 &2335275226029141997
 BoxCollider:
   m_ObjectHideFlags: 0

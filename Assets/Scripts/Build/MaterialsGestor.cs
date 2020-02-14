@@ -22,6 +22,7 @@ public class MaterialsGestor : MonoBehaviour
     }
     
     private List<MaterialGestor> _materials;
+    private BuildController _build;
     private List<Light> _lights;
     private static readonly int Texture = Shader.PropertyToID("_texture");
     private static readonly int Color = Shader.PropertyToID("_color");
@@ -32,6 +33,7 @@ public class MaterialsGestor : MonoBehaviour
         _materials = new List<MaterialGestor>();
         _lights = new List<Light>();
         LoadMaterialGestor(this.gameObject);
+        _build = GetComponent<BuildController>();
 
     }
 
@@ -83,7 +85,17 @@ public class MaterialsGestor : MonoBehaviour
         {
             foreach (Material mat in gestor.BaseMaterial)
             {
-                mat.SetFloat("_progress",progress *50);
+                mat.SetFloat("_progress",progress *  _build.height + transform.position.y);
+            }
+        }
+    }
+    public void SetExit(float progress)
+    {
+        foreach (MaterialGestor gestor in _materials)
+        {
+            foreach (Material mat in gestor.BaseMaterial)
+            {
+                mat.SetFloat("_planProgress",progress);
             }
         }
     }

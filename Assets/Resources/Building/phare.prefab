@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
-  constructMaterial: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   name: Light
   description: Light
   type: 5
   tier: 2
   resourcesValue: 1
+  height: 170
   requires: 09000000
   materials: {fileID: 2689150849166109780}
 --- !u!65 &2003171648951480802
@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17e853b3b5246f0bb6ca2103c88d213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
 --- !u!1 &1463573189561084696
 GameObject:
   m_ObjectHideFlags: 0

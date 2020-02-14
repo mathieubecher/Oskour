@@ -77,11 +77,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
         <option value="$PROJECT_DIR$/Assets/StorageBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/InteractiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
       </list>
     </option>
   </component>
@@ -137,6 +137,8 @@
       <workItem from="1581427200211" duration="25894000" />
       <workItem from="1581503009903" duration="10908000" />
       <workItem from="1581541929185" duration="14443000" />
+      <workItem from="1581606325833" duration="3968000" />
+      <workItem from="1581680678348" duration="1347000" />
     </task>
     <servers />
   </component>

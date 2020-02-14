@@ -22,7 +22,7 @@ public class BuildController : MonoBehaviour
     protected Animator _animator;
     [HideInInspector]
     public GameManager _manager;
-
+    
 
     [ContextMenu("Prepare shader")]
     void ConstructShader()
@@ -39,8 +39,9 @@ public class BuildController : MonoBehaviour
     public string description;
     public BuildType type;
     public int tier = 1;
-
+    
     public double resourcesValue = 1;
+    public float height = 100;
     
     [Space]
     public List<BuildType> requires;

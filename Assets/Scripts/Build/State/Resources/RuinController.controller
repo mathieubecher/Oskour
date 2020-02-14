@@ -78,6 +78,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
+  exitcurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.044267528
+      outSlope: 0.044267528
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0630303
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -1.7291464
+      outSlope: -1.7291464
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.056969702
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  exitSpeed: 2
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0

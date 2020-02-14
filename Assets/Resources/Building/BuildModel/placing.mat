@@ -153,7 +153,7 @@ Material:
     - Vector1_43F180FD: 0
     - Vector1_44411787: 0
     - Vector1_5CFAA014: 0.1
-    - Vector1_61183576: 4.6
+    - Vector1_61183576: 4
     - Vector1_DB6293F: 1.35
     - _AORemapMax: 1
     - _AORemapMin: 0
@@ -274,12 +274,13 @@ Material:
     - _UVEmissive: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
-    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestDepthEqualForOpaque: 0
     - _ZTestGBuffer: 4
     - _ZTestModeDistortion: 4
-    - _ZTestTransparent: 4
+    - _ZTestTransparent: 0
     - _ZWrite: 1
-    - _progress: 0
+    - _planProgress: 1
+    - _progress: -200
     - _sizeworld: 0.1
     - progress: 0
     - sizeworld: 0.05

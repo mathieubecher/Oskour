@@ -342,12 +342,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
-  constructMaterial: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   name: Broken Submarine
   description: You came here with it.
   type: 10
   tier: 0
   resourcesValue: 1
+  height: 60
   requires: 
   materials: {fileID: 7142110420538668488}
 --- !u!65 &4492286213417737254
@@ -410,7 +410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17e853b3b5246f0bb6ca2103c88d213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
 --- !u!95 &8638617960251142649
 Animator:
   serializedVersion: 3

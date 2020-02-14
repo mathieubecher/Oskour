@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
-  constructMaterial: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
   name: Oxygenator
   description: Oxygenator
   type: 4
   tier: 2
   resourcesValue: 1
+  height: 55
   requires: 09000000
   materials: {fileID: 4681167290214297869}
   storable: 0
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17e853b3b5246f0bb6ca2103c88d213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
 --- !u!136 &4353652634488477885
 CapsuleCollider:
   m_ObjectHideFlags: 0

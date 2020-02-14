@@ -123,6 +123,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
+  exitcurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -0.13670436
+      outSlope: -0.13670436
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0569697
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -1.0992564
+      outSlope: -1.0992564
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0630303
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  exitSpeed: 2
 --- !u!114 &-2265510396753366071
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -202,13 +227,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: progress
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -461,3 +486,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   construct: {fileID: 2100000, guid: 43e526c759205f4438eec61780bd493c, type: 2}
+  exitcurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  exitSpeed: 2
