@@ -24,6 +24,7 @@ public class MaterialsGestor : MonoBehaviour
     private List<MaterialGestor> _materials;
     private BuildController _build;
     private List<Light> _lights;
+
     private static readonly int Texture = Shader.PropertyToID("_texture");
     private static readonly int Color = Shader.PropertyToID("_color");
     private static readonly int Progress = Shader.PropertyToID("_progress");
@@ -34,6 +35,7 @@ public class MaterialsGestor : MonoBehaviour
         _lights = new List<Light>();
         LoadMaterialGestor(this.gameObject);
         _build = GetComponent<BuildController>();
+        Debug.Log("load Material");
 
     }
 
@@ -51,29 +53,6 @@ public class MaterialsGestor : MonoBehaviour
         }
     }
 
-    public void ResetMaterial()
-    {
-        foreach (MaterialGestor materialGestor in _materials)
-        {
-            materialGestor.Renderer.materials = materialGestor.BaseMaterial;
-            materialGestor.Renderer.shadowCastingMode = ShadowCastingMode.On;
-        }
-
-        foreach (Light lightGestor in _lights) lightGestor.enabled = true;
-    }
-
-    public void SetMaterial(Material material)
-    {
-        foreach (MaterialGestor materialGestor in _materials)
-        {
-            Material[] mats = new Material[1] {material};
-            materialGestor.Renderer.materials = mats;
-
-            materialGestor.Renderer.shadowCastingMode = ShadowCastingMode.Off;
-        }
-        foreach (Light lightGestor in _lights) lightGestor.enabled = false;
-    }
-
     private void Update()
     {
         
@@ -81,6 +60,7 @@ public class MaterialsGestor : MonoBehaviour
 
     public void SetProgress(float progress)
     {
+        
         foreach (MaterialGestor gestor in _materials)
         {
             foreach (Material mat in gestor.BaseMaterial)
@@ -99,6 +79,14 @@ public class MaterialsGestor : MonoBehaviour
             }
         }
     }
+
+    public void SetLight(bool active)
+    {
+        foreach (Light light in _lights)
+        {
+            light.enabled = true;
+        }
+    }    
     
     #region Inspector
     

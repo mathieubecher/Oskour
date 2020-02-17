@@ -16,11 +16,12 @@ public class ConstructBuild : StateBuild
     {
         base.OnStateEnter(animator,stateInfo,layerIndex);
         type = StateList.Construct;
+        
         if(_animator.GetFloat(Progress)  >= 1)_animator.SetFloat(Progress, 1);
         else if(_animator.GetFloat(Progress)  <= 0) _animator.SetFloat(Progress, 0);
         
                 
-        build.materials.ResetMaterial();
+        //build.materials.ResetMaterial();
         build.materials.SetProgress(animator.GetFloat(Progress));
     }
     

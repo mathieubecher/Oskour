@@ -12,9 +12,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Building/BuildModel/Light.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Wwise/Deployment/API/Handwritten/Common/AkWwiseInitializationSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScript/ButonBuild.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,18 +73,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/State/CameraPick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/StateBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/RuinController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/PlacingBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/InteractiveController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraPointer.cs" />
         <option value="$PROJECT_DIR$/Assets/StorageBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/InteractiveBuild.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Build/BuildController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
         <option value="$PROJECT_DIR$/Assets/Includes/MainLightNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Includes/CustomLighting.hlsl" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Building/BuildModel/Light.hlsl" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ConstructBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/PlacingBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/State/Resources/Script/ActiveBuild.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Build/MaterialsGestor.cs" />
       </list>
     </option>
   </component>
@@ -140,6 +143,8 @@
       <workItem from="1581541929185" duration="14443000" />
       <workItem from="1581606325833" duration="3968000" />
       <workItem from="1581680678348" duration="1347000" />
+      <workItem from="1581705583302" duration="4105000" />
+      <workItem from="1581766913948" duration="4749000" />
     </task>
     <servers />
   </component>

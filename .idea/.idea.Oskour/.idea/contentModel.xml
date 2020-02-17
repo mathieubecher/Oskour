@@ -7,6 +7,13 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Resources" t="Include">
+          <e p="Building" t="Include">
+            <e p="BuildModel" t="Include">
+              <e p="Light.hlsl" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Build" t="Include">
             <e p="BuildController.cs" t="Include" />

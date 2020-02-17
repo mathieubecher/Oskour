@@ -13,7 +13,7 @@ public class ActiveBuild : StateBuild
     {
         base.OnStateEnter(animator,stateInfo,layerIndex);
         type = StateList.Active;
-        build.materials.ResetMaterial();
+        build.materials.SetLight(true);
         build.materials.SetProgress(animator.GetFloat(Progress));
     }
 

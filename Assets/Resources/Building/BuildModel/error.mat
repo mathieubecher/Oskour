@@ -88,7 +88,23 @@ Material:
         m_Texture: {fileID: 2800000, guid: f916dfc2dd5ae5a4aa598d68083f69af, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_24E002CB_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 586725e2a7ae00d4da7ecf348c62865c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4429FA90_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f916dfc2dd5ae5a4aa598d68083f69af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_4C92BFB8_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 586725e2a7ae00d4da7ecf348c62865c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_6C09E12C_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f916dfc2dd5ae5a4aa598d68083f69af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_B8B5891D_Texture_1:
         m_Texture: {fileID: 2800000, guid: 586725e2a7ae00d4da7ecf348c62865c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -197,7 +213,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _ReceivesSSR: 0
+    - _ReceivesSSR: 1
     - _RefractionModel: 0
     - _RenderQueueType: 5
     - _RequireSplitLighting: 0
@@ -210,15 +226,15 @@ Material:
     - _SpecularAAThreshold: 0.2
     - _SpecularOcclusionMode: 1
     - _SrcBlend: 1
-    - _StencilRef: 0
-    - _StencilRefDepth: 32
+    - _StencilRef: 2
+    - _StencilRefDepth: 0
     - _StencilRefDistortionVec: 64
     - _StencilRefGBuffer: 2
-    - _StencilRefMV: 160
+    - _StencilRefMV: 128
     - _StencilWriteMask: 3
     - _StencilWriteMaskDepth: 48
     - _StencilWriteMaskDistortionVec: 64
-    - _StencilWriteMaskGBuffer: 3
+    - _StencilWriteMaskGBuffer: 51
     - _StencilWriteMaskMV: 176
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
@@ -264,7 +280,7 @@ Material:
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
-    - _color: {r: 2.6736517, g: 0.8311105, b: 0.81189424, a: 1}
+    - _color: {r: 2.6630425, g: 0.83655787, b: 0.8086726, a: 1}
 --- !u!114 &359945266025801551
 MonoBehaviour:
   m_ObjectHideFlags: 11
