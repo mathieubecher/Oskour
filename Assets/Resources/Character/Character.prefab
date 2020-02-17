@@ -461,8 +461,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 79577470
-  m_Range: 100
+  m_Intensity: 3.435974e+10
+  m_Range: 88.7
   m_SpotAngle: 38
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -530,14 +530,14 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 1e+9
+  m_Intensity: 38
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 50.4
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
-  m_FadeDistance: 10000
+  m_LightUnit: 4
+  m_FadeDistance: 50000
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
   m_NonLightmappedOnly: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_ShapeHeight: 0.5
   m_AspectRatio: 1
   m_ShapeRadius: 0
-  m_SoftnessScale: 1
+  m_SoftnessScale: 0
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 1
   m_MaxSmoothness: 0.99
@@ -574,9 +574,9 @@ MonoBehaviour:
   m_EvsmBlurPasses: 0
   m_LightlayersMask: 1
   m_LinkShadowLayers: 1
-  m_ShadowNearPlane: 4.55
-  m_BlockerSampleCount: 24
-  m_FilterSampleCount: 16
+  m_ShadowNearPlane: 10
+  m_BlockerSampleCount: 64
+  m_FilterSampleCount: 57
   m_MinFilterSize: 1
   m_KernelSize: 5
   m_LightAngle: 1
@@ -595,8 +595,8 @@ MonoBehaviour:
   m_RayTracedContactShadow: 0
   m_ShadowTint: {r: 0, g: 0, b: 0, a: 1}
   m_PenumbraTint: 0
-  m_NormalBias: 0.75
-  m_SlopeBias: 0.5
+  m_NormalBias: 5
+  m_SlopeBias: 1
   m_ShadowUpdateMode: 0
   m_BarnDoorAngle: 90
   m_BarnDoorLength: 0.05
@@ -613,9 +613,9 @@ MonoBehaviour:
   m_ShadowVariant: 0
   m_ShadowPrecision: 0
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
-  showAdditionalSettings: 0
+  showAdditionalSettings: 12
 --- !u!1001 &754079987051046755
 PrefabInstance:
   m_ObjectHideFlags: 0
