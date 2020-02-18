@@ -442,13 +442,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5708814406609509359}
-  m_LocalRotation: {x: 0.13052616, y: -0, z: -0, w: 0.9914449}
-  m_LocalPosition: {x: 0.099999905, y: -0.09, z: 3.45}
+  m_LocalRotation: {x: 0.2943739, y: 0, z: 0, w: 0.9556904}
+  m_LocalPosition: {x: 0.099999905, y: -0.44, z: 2.12}
   m_LocalScale: {x: 0.4, y: 0.40000007, z: 0.40000007}
   m_Children: []
   m_Father: {fileID: 3438964202202171102}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 34.24, y: 0, z: 0}
 --- !u!108 &690241664398819612
 Light:
   m_ObjectHideFlags: 0
@@ -461,13 +461,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.435974e+10
-  m_Range: 88.7
-  m_SpotAngle: 38
-  m_InnerSpotAngle: 1
+  m_Intensity: 4194304
+  m_Range: 178.2585
+  m_SpotAngle: 92.959526
+  m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -492,7 +492,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 2800000, guid: 17fe0267299f7ef49867b0f59d11b5bc, type: 3}
+  m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -501,10 +501,10 @@ Light:
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
-  m_LightShadowCasterMode: 2
+  m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 4757
+  m_ColorTemperature: 4649
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -530,14 +530,14 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 38
+  m_Intensity: 25
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
-  m_InnerSpotPercent: 50.4
+  m_InnerSpotPercent: 46.283318
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
   m_LightUnit: 4
-  m_FadeDistance: 50000
+  m_FadeDistance: 10000
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
   m_NonLightmappedOnly: 0
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_ShapeRadius: 0
   m_SoftnessScale: 0
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 1
+  m_CustomSpotLightShadowCone: 30
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 1
   m_DisplayAreaLightEmissiveMesh: 0
@@ -595,8 +595,8 @@ MonoBehaviour:
   m_RayTracedContactShadow: 0
   m_ShadowTint: {r: 0, g: 0, b: 0, a: 1}
   m_PenumbraTint: 0
-  m_NormalBias: 5
-  m_SlopeBias: 1
+  m_NormalBias: 0.75
+  m_SlopeBias: 0.5
   m_ShadowUpdateMode: 0
   m_BarnDoorAngle: 90
   m_BarnDoorLength: 0.05
@@ -615,7 +615,7 @@ MonoBehaviour:
   useOldInspector: 0
   useVolumetric: 0
   featuresFoldout: 1
-  showAdditionalSettings: 12
+  showAdditionalSettings: 0
 --- !u!1001 &754079987051046755
 PrefabInstance:
   m_ObjectHideFlags: 0
