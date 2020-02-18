@@ -1887,7 +1887,7 @@ PrefabInstance:
     - target: {fileID: 138261337050260171, guid: fc342cd99cb72724f96627ff5ad18823,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 263.2
+      value: 286
       objectReference: {fileID: 0}
     - target: {fileID: 138261337050260171, guid: fc342cd99cb72724f96627ff5ad18823,
         type: 3}
@@ -1897,7 +1897,7 @@ PrefabInstance:
     - target: {fileID: 138261337050260171, guid: fc342cd99cb72724f96627ff5ad18823,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -246.9
+      value: -278
       objectReference: {fileID: 0}
     - target: {fileID: 138261337050260171, guid: fc342cd99cb72724f96627ff5ad18823,
         type: 3}
@@ -2156,7 +2156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743852299}
   m_LocalRotation: {x: 0.5321376, y: 0, z: 0, w: 0.84665793}
-  m_LocalPosition: {x: -37.2, y: 239.1, z: -166.2}
+  m_LocalPosition: {x: -37.2, y: 222, z: -158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2182,10 +2182,10 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 32.1
+  m_Intensity: 32.07
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
-  m_InnerSpotPercent: 69
+  m_InnerSpotPercent: 68.4
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
   m_LightUnit: 4
@@ -2237,13 +2237,13 @@ MonoBehaviour:
     m_Override: 512
     m_UseOverride: 0
     m_Level: 2
-  m_ShadowDimmer: 0.764
+  m_ShadowDimmer: 0.543
   m_VolumetricShadowDimmer: 1
-  m_ShadowFadeDistance: 10000
+  m_ShadowFadeDistance: 148
   m_UseContactShadow:
     m_Override: 0
     m_UseOverride: 1
-    m_Level: 0
+    m_Level: 2
   m_RayTracedContactShadow: 0
   m_ShadowTint: {r: 0.14417943, g: 0.21218996, b: 0.3773585, a: 1}
   m_PenumbraTint: 0
@@ -2267,7 +2267,7 @@ MonoBehaviour:
   useOldInspector: 0
   useVolumetric: 0
   featuresFoldout: 1
-  showAdditionalSettings: 8
+  showAdditionalSettings: 12
 --- !u!108 &1743852302
 Light:
   m_ObjectHideFlags: 0
@@ -2280,9 +2280,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9103774, g: 0.9953783, b: 1, a: 1}
-  m_Intensity: 575403400
-  m_Range: 552.73
-  m_SpotAngle: 130
+  m_Intensity: 563562240
+  m_Range: 10000
+  m_SpotAngle: 126
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -2322,7 +2322,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 10984
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
