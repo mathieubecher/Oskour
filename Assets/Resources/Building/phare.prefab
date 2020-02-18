@@ -299,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 813884294939536126, guid: ee1f7b2427415984db982b07cba1700d,
         type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1044697288358133160, guid: ee1f7b2427415984db982b07cba1700d,
         type: 3}
@@ -550,6 +550,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ShadowNearPlane
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859347177547820760, guid: ee1f7b2427415984db982b07cba1700d,
+        type: 3}
+      propertyPath: useVolumetric
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7884043052557177451, guid: ee1f7b2427415984db982b07cba1700d,
         type: 3}

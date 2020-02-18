@@ -25,12 +25,12 @@ public class InteractiveController : BuildController
     }
     
     #region Inspector
-
+#if UNITY_EDITOR
     protected override void AddAnimator()
     {
         if (!GetAnimator(out Animator animator)) animator = gameObject.AddComponent<Animator>();
         animator.runtimeAnimatorController = GetAnimatorController("InteractiveController");
     }
-
+#endif
     #endregion Inspector
 }

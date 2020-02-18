@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class MaterialsGestor : MonoBehaviour
 {
@@ -89,7 +85,7 @@ public class MaterialsGestor : MonoBehaviour
     }    
     
     #region Inspector
-    
+#if UNITY_EDITOR
     private Material construct;
 
     private void Reset()
@@ -146,5 +142,6 @@ public class MaterialsGestor : MonoBehaviour
             
         }
     }
+    #endif
     #endregion
 }

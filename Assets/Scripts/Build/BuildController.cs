@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
-using UnityEditor.SceneManagement;
+#endif
 using UnityEngine;
 
 public class BuildController : MonoBehaviour
@@ -107,6 +105,8 @@ public class BuildController : MonoBehaviour
     
     // INSPECTOR
     #region Inspector
+#if UNITY_EDITOR
+ 
     private void Reset()
     {
         
@@ -165,11 +165,12 @@ public class BuildController : MonoBehaviour
 
     protected RuntimeAnimatorController GetAnimatorController(string path)
     {
-        if(Resources.Load<UnityEditor.Animations.AnimatorController>(path) != null)
-            return  (AnimatorController)Resources.Load<UnityEditor.Animations.AnimatorController>(path);
+        if(Resources.Load<AnimatorController>(path) != null)
+            return  Resources.Load<AnimatorController>(path);
         
         return Resources.Load<RuntimeAnimatorController>(path);
     }
+#endif
     #endregion
 
 
